@@ -8,14 +8,15 @@ Integrated Restaurant Management System for an Restaurent Management
 
 Moudle
 ========
-# Table Management
-# Menu Management
-# Sell Management
-# Inventory Management
-# Back-house management
-# Report
+	# Table Management
+	# Menu Management
+	# Sell Management
+	# Inventory Management
+	# Back-house management
+	# Report
 
-
+	
+==========
 Contact:
 Md. Khorshed Alam
 Email: andgatetech@gmail.com
