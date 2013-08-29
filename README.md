@@ -19,12 +19,10 @@ Donate
 ========
 
 
-	
-	
-==========
 Contact:
-Md. Khorshed Alam
-Email: andgatetech@gmail.com
-Cell: 088-01819646514
-Skype: andgateit
+========
+Md. Khorshed Alam<br>
+Email: andgatetech@gmail.com<br>
+Cell: 088-01819646514<br>
+Skype: andgateit<br>
 Web: andgatetechnologies.com
