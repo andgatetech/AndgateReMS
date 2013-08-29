@@ -17,7 +17,7 @@ Moudle
 
 Donate
 ========
-<!&#8211;moneybookers form&#8211;><form action="https://www.moneybookers.com/app/
+<form action="https://www.moneybookers.com/app/
 
 
     payment.pl" method="post" target="_blank">
@@ -46,7 +46,7 @@ Donate
     
 <input type="hidden" name="detail1_text" value="donate to support rems.andgatetechnologies.com" />
     </form>
-    </!&#8211;moneybookers>	
+
 	
 	
 ==========
