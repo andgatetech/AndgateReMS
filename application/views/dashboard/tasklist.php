@@ -11,6 +11,7 @@
 						<table class="table table-striped">
 							  <thead>
 								  <tr>
+                                  	<th></th>
 									  <th>Task</th>
 									  <th>Assignee</th>									  
 									  <th>Status</th>                                          
@@ -18,7 +19,14 @@
 							  </thead>   
 							  <tbody>
 								<tr>
-									<td>Demo Task One</td>
+									<td>
+                                        <div class="controls">
+                                          <label class="checkbox inline">
+                                            <input type="checkbox" id="inlineCheckbox1" value="option1">
+                                          </label>
+                                        </div>
+                                     </td>
+                                    <td>Demo Task One</td>
 									<td class="center">Arif</td>
 									
 									<td class="center">
@@ -26,7 +34,14 @@
 									</td>                                       
 								</tr>
 								<tr>
-									<td>Demo Task Two</td>
+									<td>
+                                        <div class="controls">
+                                          <label class="checkbox inline">
+                                            <input type="checkbox" id="inlineCheckbox1" value="option1">
+                                          </label>
+                                        </div>
+                                     </td>
+                                    <td>Demo Task Two</td>
 									<td class="center">Kabir</td>
 									
 									<td class="center">
@@ -34,7 +49,14 @@
 									</td>                                       
 								</tr>
 								<tr>
-									<td>Demo Task Three</td>
+									<td>
+                                        <div class="controls">
+                                          <label class="checkbox inline">
+                                            <input type="checkbox" id="inlineCheckbox1" value="option1">
+                                          </label>
+                                        </div>
+                                     </td>
+                                    <td>Demo Task Three</td>
 									<td class="center">Rafiq</td>
 									
 									<td class="center">
@@ -42,7 +64,14 @@
 									</td>                                        
 								</tr>
 								<tr>
-									<td>Demo Task Four</td>
+									<td>
+                                        <div class="controls">
+                                          <label class="checkbox inline">
+                                            <input type="checkbox" id="inlineCheckbox1" value="option1">
+                                          </label>
+                                        </div>
+                                     </td>
+                                    <td>Demo Task Four</td>
 									<td class="center">Kabir</td>
 									
 									<td class="center">
@@ -50,7 +79,14 @@
 									</td>                                       
 								</tr>
 								<tr>
-									<td>Demo Task Five</td>
+									<td>
+                                        <div class="controls">
+                                          <label class="checkbox inline">
+                                            <input type="checkbox" id="inlineCheckbox1" value="option1">
+                                          </label>
+                                        </div>
+                                     </td>
+                                    <td>Demo Task Five</td>
 									<td class="center">Jabed</td>
 									
 									<td class="center">

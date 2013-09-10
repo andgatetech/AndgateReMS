@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Sep 10, 2013 at 08:47 AM
+-- Generation Time: Sep 10, 2013 at 10:28 PM
 -- Server version: 5.1.41
 -- PHP Version: 5.3.1
 
@@ -50,6 +50,49 @@ CREATE TABLE IF NOT EXISTS `item_types` (
 -- Dumping data for table `item_types`
 --
 
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `join_user_types_users`
+--
+
+CREATE TABLE IF NOT EXISTS `join_user_types_users` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) DEFAULT '0',
+  `user_type_id` int(11) DEFAULT '0',
+  PRIMARY KEY (`id`),
+  KEY `fk_students_subjects_copy1_users1` (`user_id`),
+  KEY `fk_students_subjects_copy1_userTypes1` (`user_type_id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=43 ;
+
+--
+-- Dumping data for table `join_user_types_users`
+--
+
+INSERT INTO `join_user_types_users` (`id`, `user_id`, `user_type_id`) VALUES
+(2, 1, 1),
+(3, 2, 1),
+(4, 3, 1),
+(41, 52, 1),
+(40, 51, 1),
+(39, 50, 1),
+(38, 49, 1),
+(37, 48, 1),
+(36, 47, 1),
+(35, 46, 1),
+(34, 45, 2),
+(33, 44, 2),
+(32, 43, 2),
+(31, 42, 2),
+(30, 40, 2),
+(18, 4, 2),
+(27, 36, 1),
+(26, 35, 1),
+(25, 34, 1),
+(29, 39, 1),
+(28, 38, 2),
+(42, 53, 3);
 
 -- --------------------------------------------------------
 
@@ -268,16 +311,43 @@ CREATE TABLE IF NOT EXISTS `tables` (
 
 CREATE TABLE IF NOT EXISTS `users` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(45) DEFAULT NULL,
-  `email` varchar(45) DEFAULT NULL,
-  `password` varchar(45) DEFAULT NULL,
+  `name` varchar(50) COLLATE utf8_unicode_ci DEFAULT '-1',
+  `email` varchar(30) COLLATE utf8_unicode_ci DEFAULT '-1',
+  `password` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `created_on` datetime DEFAULT NULL,
+  `updated_on` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=54 ;
 
 --
 -- Dumping data for table `users`
 --
 
+INSERT INTO `users` (`id`, `name`, `email`, `password`, `created_on`, `updated_on`) VALUES
+(53, 'superadmin', 'superadmin@superadmin.com', '0192023a7bbd73250516f069df18b500', '2012-07-29 19:41:02', '2012-07-29 19:41:04');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user_types`
+--
+
+CREATE TABLE IF NOT EXISTS `user_types` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `type` varchar(20) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL DEFAULT '-1',
+  `created_on` datetime DEFAULT NULL,
+  `updated_on` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_icelandic_ci AUTO_INCREMENT=4 ;
+
+--
+-- Dumping data for table `user_types`
+--
+
+INSERT INTO `user_types` (`id`, `type`, `created_on`, `updated_on`) VALUES
+(1, 'student', NULL, NULL),
+(2, 'faculty', NULL, NULL),
+(3, 'superadmin', '2012-07-29 19:42:29', '2012-07-29 19:42:31');
 
 -- --------------------------------------------------------
 
