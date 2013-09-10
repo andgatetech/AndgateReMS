@@ -4,8 +4,8 @@ include('header.php'); ?>
 
 			<div class="row-fluid">
 				<div class="span12 center login-header">
-					<h2>Welcome to AndgateReMS</h2>
-                    <h4>Your restuarent business assistance</h4>
+					<h2>AndgateReMS</h2>
+                    <h4>Your restaurent business assistant</h4>
 				</div><!--/span-->
 			</div><!--/row-->
 			
