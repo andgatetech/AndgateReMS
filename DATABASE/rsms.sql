@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Sep 10, 2013 at 06:43 AM
+-- Generation Time: Sep 10, 2013 at 07:11 AM
 -- Server version: 5.1.41
 -- PHP Version: 5.3.1
 
@@ -62,13 +62,18 @@ CREATE TABLE IF NOT EXISTS `menus` (
   `title` varchar(150) DEFAULT NULL,
   `description` text,
   `price` float DEFAULT NULL,
+  `type` enum('Reguler','Large') DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
 --
 -- Dumping data for table `menus`
 --
 
+INSERT INTO `menus` (`id`, `title`, `description`, `price`, `type`) VALUES
+(1, 'test', NULL, 130, NULL),
+(2, 'testB', NULL, 100, 'Large'),
+(3, NULL, NULL, 0, 'Reguler');
 
 -- --------------------------------------------------------
 
