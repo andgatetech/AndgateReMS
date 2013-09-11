@@ -19,7 +19,7 @@
 						  </thead>   
 						  <tbody>
 							<tr>
-								<td>David R</td>
+								<td>ORD00001</td>
 								<td class="center">302</td>
 								<td class="center">A1</td>
 								<td class="center">
@@ -28,7 +28,7 @@
 								
 							</tr>
 							<tr>
-								<td>Chris Jack</td>
+								<td>ORD00002</td>
 								<td class="center">225</td>
 								<td class="center">A4</td>
 								<td class="center">
@@ -36,7 +36,7 @@
 								</td>
 							</tr>
 							<tr>
-								<td>Jack Chris</td>
+								<td>ORD00003</td>
 								<td class="center">158</td>
 								<td class="center">B5</td>
 								<td class="center">
@@ -44,7 +44,7 @@
 								</td>
 							</tr>
 							<tr>
-								<td>Muhammad Usman</td>
+								<td>ORD00004</td>
 								<td class="center">625</td>
 								<td class="center">D2</td>
 								<td class="center">
@@ -53,7 +53,7 @@
 
 							</tr>
 							<tr>
-								<td>Sheikh Heera</td>
+								<td>ORD00005</td>
 								<td class="center">300</td>
 								<td class="center">A2</td>
 								<td class="center">
@@ -61,7 +61,7 @@
 								</td>
 							</tr>
 							<tr>
-								<td>Helen Garner</td>
+								<td>ORD00006</td>
 								<td class="center">545</td>
 								<td class="center">B6</td>
 								<td class="center">
@@ -70,7 +70,7 @@
 
 							</tr>
 							<tr>
-								<td>Saruar Ahmed</td>
+								<td>ORD00007</td>
 								<td class="center">1025</td>
 								<td class="center">A5</td>
 								<td class="center">
@@ -78,7 +78,7 @@
 								</td>						
 							</tr>
 							<tr>
-								<td>Ahemd Saruar</td>
+								<td>ORD00008</td>
 								<td class="center">621</td>
 								<td class="center">A6</td>
 								<td class="center">
@@ -86,7 +86,7 @@
 								</td>				
 							</tr>
 							<tr>
-								<td>Habib Rizwan</td>
+								<td>ORD00009</td>
 								<td class="center">85</td>
 								<td class="center">A4</td>
 								<td class="center">
@@ -94,7 +94,7 @@
 								</td>
 							</tr>
 							<tr>
-								<td>Rizwan Habib</td>
+								<td>ORD000010</td>
 								<td class="center">105</td>
 								<td class="center">B1</td>
 								<td class="center">
@@ -102,7 +102,7 @@
 								</td>
 							</tr>
 							<tr>
-								<td>Amrin Sana</td>
+								<td>ORD000011</td>
 								<td class="center">200</td>
 								<td class="center">B2</td>
 								<td class="center">
@@ -111,7 +111,7 @@
 
 							</tr>
 							<tr>
-								<td>Sana Amrin</td>
+								<td>ORD000012</td>
 								<td class="center">120</td>
 								<td class="center">C5</td>
 								<td class="center">
@@ -119,171 +119,171 @@
 								</td>
 							</tr>
 							<tr>
-								<td>Ifrah Jannat</td>
+								<td>ORD000013</td>
+								<td class="center">405</td>
+								<td class="center">C2</td>
+								<td class="center">
+									<span class="label">Inactive</span>
+								</td>
+
+							</tr>
+							<tr>
+								<td>ORD000014</td>
+								<td class="center">201</td>
+								<td class="center">A5</td>
+								<td class="center">
+									<span class="label">Inactive</span>
+								</td>
+
+							</tr>
+							<tr>
+								<td>ORD000015</td>
+								<td class="center">206</td>
 								<td class="center">C4</td>
-								<td class="center">260</td>
-								<td class="center">
-									<span class="label">Inactive</span>
-								</td>
-
-							</tr>
-							<tr>
-								<td>Jannat Ifrah</td>
-								<td class="center">2012/06/01</td>
-								<td class="center">Admin</td>
-								<td class="center">
-									<span class="label">Inactive</span>
-								</td>
-
-							</tr>
-							<tr>
-								<td>Robert</td>
-								<td class="center">2012/03/01</td>
-								<td class="center">Member</td>
 								<td class="center">
 									<span class="label label-warning">Pending</span>
 								</td>
 							</tr>
 							<tr>
-								<td>Dave Robert</td>
-								<td class="center">2012/03/01</td>
-								<td class="center">Member</td>
+								<td>ORD000016</td>
+								<td class="center">208</td>
+								<td class="center">B4</td>
 								<td class="center">
 									<span class="label label-warning">Pending</span>
 								</td>
 							</tr>
 							<tr>
-								<td>Brown Robert</td>
-								<td class="center">2012/03/01</td>
-								<td class="center">Member</td>
+								<td>ORD000017</td>
+								<td class="center">208</td>
+								<td class="center">A4</td>
 								<td class="center">
 									<span class="label label-warning">Pending</span>
 								</td>
 
 							</tr>
 							<tr>
-								<td>Usman Muhammad</td>
-								<td class="center">2012/01/01</td>
-								<td class="center">Member</td>
+								<td>ORD000018</td>
+								<td class="center">204</td>
+								<td class="center">D2</td>
 								<td class="center">
 									<span class="label label-success">Active</span>
 								</td>
 							</tr>
 							<tr>
-								<td>Abdullah</td>
-								<td class="center">2012/02/01</td>
-								<td class="center">Staff</td>
+								<td>ORD000019</td>
+								<td class="center">208</td>
+								<td class="center">A4</td>
 								<td class="center">
 									<span class="label label-important">Banned</span>
 								</td>
 							</tr>
 							<tr>
-								<td>Dow John</td>
-								<td class="center">2012/02/01</td>
-								<td class="center">Admin</td>
+								<td>ORD000020</td>
+								<td class="center">204</td>
+								<td class="center">A4</td>
 								<td class="center">
 									<span class="label">Inactive</span>
 								</td>
 							</tr>
 							<tr>
-								<td>John R</td>
-								<td class="center">2012/02/01</td>
-								<td class="center">Admin</td>
+								<td>ORD000021</td>
+								<td class="center">208</td>
+								<td class="center">A3</td>
 								<td class="center">
 									<span class="label">Inactive</span>
 								</td>
 							</tr>
 							<tr>
-								<td>Paul Wilson</td>
-								<td class="center">2012/03/01</td>
-								<td class="center">Member</td>
+								<td>ORD000022</td>
+								<td class="center">201</td>
+								<td class="center">D1</td>
 								<td class="center">
 									<span class="label label-warning">Pending</span>
 								</td>
 							</tr>
 							<tr>
-								<td>Wilson Paul</td>
-								<td class="center">2012/03/01</td>
-								<td class="center">Member</td>
+								<td>ORD000023</td>
+								<td class="center">202</td>
+								<td class="center">D3</td>
 								<td class="center">
 									<span class="label label-warning">Pending</span>
 								</td>
 							</tr>
 							<tr>
-								<td>Heera Sheikh</td>
-								<td class="center">2012/01/21</td>
-								<td class="center">Staff</td>
+								<td>ORD000024</td>
+								<td class="center">200</td>
+								<td class="center">C3</td>
 								<td class="center">
 									<span class="label label-success">Active</span>
 								</td>
 							</tr>
 							<tr>
-								<td>Sheikh Heera</td>
-								<td class="center">2012/01/21</td>
-								<td class="center">Staff</td>
+								<td>ORD000025</td>
+								<td class="center">206</td>
+								<td class="center">A2</td>
 								<td class="center">
 									<span class="label label-success">Active</span>
 								</td>
 
 							</tr>
 							<tr>
-								<td>Christopher</td>
-								<td class="center">2012/08/23</td>
-								<td class="center">Staff</td>
+								<td>ORD000026</td>
+								<td class="center">205</td>
+								<td class="center">D2</td>
 								<td class="center">
 									<span class="label label-important">Banned</span>
 								</td>
 
 							</tr>
 							<tr>
-								<td>Andro Christopher</td>
-								<td class="center">2012/08/23</td>
-								<td class="center">Staff</td>
+								<td>ORD000027</td>
+								<td class="center">207</td>
+								<td class="center">A2</td>
 								<td class="center">
 									<span class="label label-important">Banned</span>
 								</td>
 
 							</tr>
 							<tr>
-								<td>Jhon Doe</td>
-								<td class="center">2012/06/01</td>
-								<td class="center">Admin</td>
+								<td>ORD000028</td>
+								<td class="center">201</td>
+								<td class="center">A2</td>
 								<td class="center">
 									<span class="label">Inactive</span>
 								</td>
 
 							</tr>
 							<tr>
-								<td>Lorem Ipsum</td>
-								<td class="center">2012/03/01</td>
-								<td class="center">Member</td>
+								<td>ORD000029</td>
+								<td class="center">201</td>
+								<td class="center">D1</td>
 								<td class="center">
 									<span class="label label-warning">Pending</span>
 								</td>
 
 							</tr>
 							<tr>
-								<td>Abraham</td>
-								<td class="center">2012/03/01</td>
-								<td class="center">Member</td>
+								<td>ORD000030</td>
+								<td class="center">501</td>
+								<td class="center">D3</td>
 								<td class="center">
 									<span class="label label-warning">Pending</span>
 								</td>
 
 							</tr>
 							<tr>
-								<td>Brown Blue</td>
-								<td class="center">2012/03/01</td>
-								<td class="center">Member</td>
+								<td>ORD000031</td>
+								<td class="center">201</td>
+								<td class="center">E2</td>
 								<td class="center">
 									<span class="label label-warning">Pending</span>
 								</td>
 
 							</tr>
 							<tr>
-								<td>Worth Name</td>
-								<td class="center">2012/03/01</td>
-								<td class="center">Member</td>
+								<td>ORD000032</td>
+								<td class="center">204</td>
+								<td class="center">E3</td>
 								<td class="center">
 									<span class="label label-warning">Pending</span>
 								</td>

@@ -50,12 +50,26 @@ switch ($module) {
         break;
     case "items":
 		?>
+		<div class="row-fluid sortable">
+            <!-- ITEMS -->
+			<?php $this->load->view("items/item_details"); ?>
+			<!-- ITEMS -->
+
+			<!-- ITEMS ADD -->
+				<?php $this->load->view("items/item_add"); ?>
+			<!-- ITEMS ADD -->
+
+			
+
+		</div>
+		
 
 <!-- MODULE: ITEM -------------------------------------------------------------------->	
 
 <!-- MODULE: ITEM -------------------------------------------------------------------->	
 		<?php	
         break;
+		
 }
 ?>
 
