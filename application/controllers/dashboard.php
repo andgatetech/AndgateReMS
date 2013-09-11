@@ -24,7 +24,7 @@ class Dashboard extends CI_Controller {
      * type :: string
      */
     public function index() {
-        $data['template-block'] = "order";
+        $data['module'] = "dashboard"; //test
         $this->load->view("template", $data);
     }
 

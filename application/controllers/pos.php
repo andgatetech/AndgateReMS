@@ -24,7 +24,7 @@ class Pos extends CI_Controller {
      * type :: string
      */
     public function index() {
-        $data['template-module'] = "order";
+        $data['module'] = "pos";
         $this->load->view("template", $data);
     }
 
