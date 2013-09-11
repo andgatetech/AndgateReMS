@@ -18,7 +18,7 @@
 	<meta name="author" content="Andgate Technologies">
 
 	<!-- The styles -->
-	<link id="bs-css" href="<?php echo base_url();?>assets/css/bootstrap-cerulean.css" rel="stylesheet">
+	<link id="bs-css" href="<?php echo base_url();?>asset/css/bootstrap-cerulean.css" rel="stylesheet">
 	<style type="text/css">
 	  body {
 		padding-bottom: 40px;
@@ -27,22 +27,22 @@
 		padding: 9px 0;
 	  }
 	</style>
-	<link href="<?php echo base_url();?>assets/css/bootstrap-responsive.css" rel="stylesheet">
-	<link href="<?php echo base_url();?>assets/css/charisma-app.css" rel="stylesheet">
-	<link href="<?php echo base_url();?>assets/css/jquery-ui-1.8.21.custom.css" rel="stylesheet">
-	<link href='<?php echo base_url();?>assets/css/fullcalendar.css' rel='stylesheet'>
-	<link href='<?php echo base_url();?>assets/css/fullcalendar.print.css' rel='stylesheet'  media='print'>
-	<link href='<?php echo base_url();?>assets/css/chosen.css' rel='stylesheet'>
-	<link href='<?php echo base_url();?>assets/css/uniform.default.css' rel='stylesheet'>
-	<link href='<?php echo base_url();?>assets/css/colorbox.css' rel='stylesheet'>
-	<link href='<?php echo base_url();?>assets/css/jquery.cleditor.css' rel='stylesheet'>
-	<link href='<?php echo base_url();?>assets/css/jquery.noty.css' rel='stylesheet'>
-	<link href='<?php echo base_url();?>assets/css/noty_theme_default.css' rel='stylesheet'>
-	<link href='<?php echo base_url();?>assets/css/elfinder.min.css' rel='stylesheet'>
-	<link href='<?php echo base_url();?>assets/css/elfinder.theme.css' rel='stylesheet'>
-	<link href='<?php echo base_url();?>assets/css/jquery.iphone.toggle.css' rel='stylesheet'>
-	<link href='<?php echo base_url();?>assets/css/opa-icons.css' rel='stylesheet'>
-	<link href='<?php echo base_url();?>assets/css/uploadify.css' rel='stylesheet'>
+	<link href="<?php echo base_url();?>asset/css/bootstrap-responsive.css" rel="stylesheet">
+	<link href="<?php echo base_url();?>asset/css/charisma-app.css" rel="stylesheet">
+	<link href="<?php echo base_url();?>asset/css/jquery-ui-1.8.21.custom.css" rel="stylesheet">
+	<link href='<?php echo base_url();?>asset/css/fullcalendar.css' rel='stylesheet'>
+	<link href='<?php echo base_url();?>asset/css/fullcalendar.print.css' rel='stylesheet'  media='print'>
+	<link href='<?php echo base_url();?>asset/css/chosen.css' rel='stylesheet'>
+	<link href='<?php echo base_url();?>asset/css/uniform.default.css' rel='stylesheet'>
+	<link href='<?php echo base_url();?>asset/css/colorbox.css' rel='stylesheet'>
+	<link href='<?php echo base_url();?>asset/css/jquery.cleditor.css' rel='stylesheet'>
+	<link href='<?php echo base_url();?>asset/css/jquery.noty.css' rel='stylesheet'>
+	<link href='<?php echo base_url();?>asset/css/noty_theme_default.css' rel='stylesheet'>
+	<link href='<?php echo base_url();?>asset/css/elfinder.min.css' rel='stylesheet'>
+	<link href='<?php echo base_url();?>asset/css/elfinder.theme.css' rel='stylesheet'>
+	<link href='<?php echo base_url();?>asset/css/jquery.iphone.toggle.css' rel='stylesheet'>
+	<link href='<?php echo base_url();?>asset/css/opa-icons.css' rel='stylesheet'>
+	<link href='<?php echo base_url();?>asset/css/uploadify.css' rel='stylesheet'>
 
 	<!-- The HTML5 shim, for IE6-8 support of HTML5 elements -->
 	<!--[if lt IE 9]>
@@ -50,7 +50,7 @@
 	<![endif]-->
 
 	<!-- The fav icon -->
-	<link rel="shortcut icon" href="<?php echo base_url();?>assets/img/favicon.ico">
+	<link rel="shortcut icon" href="<?php echo base_url();?>asset/img/favicon.ico">
 	
 	
 		
@@ -67,7 +67,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</a>
-				<a class="brand" href="index.php"> <img alt="Charisma Logo" src="<?php echo base_url();?>assets/img/logo20.png" /> <span>AndgateReMS</span></a>
+				<a class="brand" href="index.php"> <img alt="Charisma Logo" src="<?php echo base_url();?>asset/img/logo.png" /></a>
 				
 				<!-- theme selector starts -->
 				<div class="btn-group pull-right theme-container" >

@@ -4,8 +4,8 @@ include('header.php'); ?>
 
 			<div class="row-fluid">
 				<div class="span12 center login-header">
-					<h2>AndgateReMS</h2>
-                    <h4>Your restaurent business assistant</h4>
+					
+					<img src="<?php echo base_url();?>/assets/img/logo.png">
 				</div><!--/span-->
 			</div><!--/row-->
 			
