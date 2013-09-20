@@ -25,6 +25,31 @@ class Pos extends CI_Controller {
      */
     public function index() {
         $data['module'] = "pos";
+        
+        // get all item category
+        $item_category = new Item_category();
+        $item_categories = $item_category->get();
+        $data['item_categories'] = $item_categories;
+
+        // get all items
+        $item = new Item();
+        $items = $item->get();
+        $data['items'] = $items;
+        $this->load->view("template", $data);
+    }
+     public function order_reciept() {
+        $data['module'] = "report";
+        $data['submodule'] = "order_reciept";
+
+        // get all item category
+        $item_category = new Item_category();
+        $item_categories = $item_category->get();
+        $data['item_categories'] = $item_categories;
+
+        // get all items
+        $item = new Item();
+        $items = $item->get();
+        $data['items'] = $items;
         $this->load->view("template", $data);
     }
 

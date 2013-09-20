@@ -3,7 +3,7 @@
 if (!defined('BASEPATH'))
     exit('No direct script access allowed');
 
-class authentication extends CI_Controller {
+class Authentication extends CI_Controller {
 
     /**
      * Authentication Controller

@@ -45,11 +45,30 @@ switch ($module) {
 		<!--row -->
 
     <!-- MODULE: DASHBOARD --------------------------------------------------------------->
+<?php
+        break;
+    case "pos":
+		?>		
+	<!-- MODULE: POS -------------------------------------------------------------------->	
+	<!--row -->
+        <div class="row-fluid sortable">
+            <!-- ORDERS -->
+			<?php $this->load->view("pos/cart"); ?>
+			<!-- ORDERS -->
 
+			<!-- TASKLIST -->
+				<?php $this->load->view("pos/menuitems"); ?>
+			<!-- TASKLIST -->
+
+		</div>
+		<!--row -->
+	<!-- MODULE: POS -------------------------------------------------------------------->		
 <?php
         break;
     case "items":
 		?>
+	<!-- MODULE: ITEM -------------------------------------------------------------------->	
+		<!--row -->
 		<div class="row-fluid sortable">
             <!-- ITEMS -->
 			<?php $this->load->view("items/item_details"); ?>
@@ -58,15 +77,33 @@ switch ($module) {
 			<!-- ITEMS ADD -->
 				<?php $this->load->view("items/item_add"); ?>
 			<!-- ITEMS ADD -->
-
-			
-
 		</div>
+		<!--row -->
+	<!-- MODULE: ITEM -------------------------------------------------------------------->	
+<?php	
+        break;
+	case "report":
+		?>
+	<!-- MODULE: REPORT -------------------------------------------------------------------->	
+		<?php if(isset($submodule)){
+			switch($submodule){
+				case "order_reciept":
+					?>
+					<!--row -->
+					<div class="row-fluid sortable">
+						<!-- ORDER RECIEPT -->
+						<?php $this->load->view("report/order_reciept"); ?>
+						<!-- ORDER RECIEPT -->			
+					</div>
+					<!--row -->
+					<?php
+				break;
+	
+			}
+		}
+		?>
 		
-
-<!-- MODULE: ITEM -------------------------------------------------------------------->	
-
-<!-- MODULE: ITEM -------------------------------------------------------------------->	
+	<!-- MODULE: REPORT -------------------------------------------------------------------->	
 		<?php	
         break;
 		
