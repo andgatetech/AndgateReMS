@@ -94,6 +94,9 @@ class Pos extends CI_Controller {
         $data['items'] = $items;
         $this->load->view("template", $data);
     }
+    public function order_finished() {
+        $this->cart_destroy();
+    }
 
     // DEBUG:: function
     public function debug_cart_add_item() {

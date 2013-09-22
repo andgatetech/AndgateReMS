@@ -58,7 +58,7 @@
 						
 						<div class="span4 center">
 						  <a href="#" class="btn btn-small btn-success">Print Order</a>&nbsp;
-						  <a href="<?php echo base_url();?>pos/index" class="btn btn-small btn-warning">Finish</a>
+						  <a href="<?php echo base_url();?>pos/order_finished" class="btn btn-small btn-warning">Finish</a>
 						</div>  
 						
 						
