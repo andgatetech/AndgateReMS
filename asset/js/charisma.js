@@ -706,3 +706,5 @@ $.extend( $.fn.dataTableExt.oPagination, {
 		}
 	}
 });
+
+

@@ -11,10 +11,10 @@
  * @author  	Simon Stenhouse
  * @link    	http://stensi.com
  */
-class Item extends DataMapper {
+class Item_type extends DataMapper {
 
-    var $table = 'items';
-   // var $has_one = array('group');
+    var $table = 'item_types';
+    //var $has_one = array('group');
     
     var $default_order_by = array('updated_on' => 'desc');
     

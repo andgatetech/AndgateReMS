@@ -53,7 +53,7 @@ switch ($module) {
 	<!--row -->
         <div class="row-fluid sortable">
             <!-- ORDERS -->
-			<?php $this->load->view("pos/cart"); ?>
+			<?php $this->load->view("pos/pos"); ?>
 			<!-- ORDERS -->
 
 			<!-- TASKLIST -->
@@ -75,7 +75,7 @@ switch ($module) {
 			<!-- ITEMS -->
 
 			<!-- ITEMS ADD -->
-				<?php $this->load->view("items/item_add"); ?>
+				<?php $this->load->view("items/item_form"); ?>
 			<!-- ITEMS ADD -->
 		</div>
 		<!--row -->

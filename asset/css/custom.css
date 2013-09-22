@@ -1,0 +1,39 @@
+/********* number pad *********/
+.main_panel
+{
+	width:270px;
+	height:150px;
+	background-color:#999999;
+	border-top-right-radius:20px;
+	border-top-left-radius:20px;
+	border-bottom-right-radius:20px;
+	border-bottom-left-radius:20px;
+	padding:20px;
+}
+.number_button
+{
+	width:30px;
+	height:30px;
+	margin:10px;
+	float:left;
+	background-color:#FFFF99;
+	border-top-right-radius:20px;
+	border-top-left-radius:20px;
+	border-bottom-right-radius:20px;
+	border-bottom-left-radius:20px;
+	font-size:14px;
+	text-align:center;
+	line-height: 30px;
+	font-weight: bold;
+}
+.number_button:hover
+{
+background-color:#66FF66;
+}
+.text_box
+{
+width:250px; 
+height:30px;
+font-size:24px;
+text-align:right;
+}

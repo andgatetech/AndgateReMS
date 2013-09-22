@@ -30,13 +30,30 @@
 				<div class="control-group">
 								<label for="focusedInput" class="control-label">Number</label>
 								<div class="controls">
-								  <input type="text" value="This is focused…" id="focusedInput" class="input-xlarge focused">
+								  <input type="text" value=""  id="number" class="input-xlarge focused">
 								</div>
 				</div>
+				<div id="numberpad">
+						<div class="main_panel">
+						
+						<div class="number_button" onclick="number_write(1);">1</div>
+						<div class="number_button" onclick="number_write(2);">2</div>
+						<div class="number_button" onclick="number_write(3);">3</div>
+						<div class="number_button" onclick="number_write(4);">4</div>
+						<div class="number_button" onclick="number_write(5);">5</div>
+						<div class="number_button" onclick="number_write(6);">6</div>
+						<div class="number_button" onclick="number_write(7);">7</div>
+						<div class="number_button" onclick="number_write(8);">8</div>
+						<div class="number_button" onclick="number_write(9);">9</div>
+						<div class="number_button" onclick="number_clear();">Clr</div>
+						<div class="number_button" onclick="number_write(0);">0</div>
+						<div class="number_button" onclick="number_c();">C</div>
+						</div>
+					</div>	
 			</div>
 			<div class="modal-footer">
 				<a href="#" class="btn" data-dismiss="modal">Close</a>
-				<a href="#" class="btn btn-primary">Save changes</a>
+				<a href="<?php echo base_url();?>pos/cart_add_item" class="btn btn-primary">Save changes</a>
 			</div>
 		</div>
 <!-------- MODAL: ORDER ITEM NUMBER -----> 	 			
@@ -123,8 +140,10 @@
 	<script src="<?php echo base_url(); ?>asset/js/jquery.history.js"></script>
 	<!-- application script for Charisma demo -->
 	<script src="<?php echo base_url(); ?>asset/js/charisma.js"></script>
+
 	
 	<!-- application custom script for product module -->
+	<script src="<?php echo base_url(); ?>asset/js/custom/custom.js"></script>
 	
 	
 	

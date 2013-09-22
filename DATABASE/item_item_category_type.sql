@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Sep 22, 2013 at 09:47 AM
+-- Generation Time: Sep 22, 2013 at 10:44 AM
 -- Server version: 5.1.41
 -- PHP Version: 5.3.1
 
@@ -18,22 +18,6 @@ SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 --
 -- Database: `rsms`
 --
-
--- --------------------------------------------------------
-
---
--- Table structure for table `inventories`
---
-
-CREATE TABLE IF NOT EXISTS `inventories` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
-
---
--- Dumping data for table `inventories`
---
-
 
 -- --------------------------------------------------------
 
@@ -78,7 +62,7 @@ INSERT INTO `items` (`id`, `title`, `description`, `price`, `type`, `created_on`
 (22, 'Café Latte', NULL, 310, 'Large', '2013-09-20 23:56:47', NULL),
 (23, 'Café Mocca', NULL, 245, '', '2013-09-20 23:56:47', NULL),
 (24, 'Café Mocca', NULL, 320, 'Large', '2013-09-20 23:56:47', NULL),
-(25, 'Americano/Black Coffee	', NULL, 150, 'General', '2013-09-20 23:56:47', '0000-00-00 00:00:00'),
+(25, 'Americano/Black Coffee	', 'test testbbb', 150, 'General', '2013-09-20 23:56:47', '0000-00-00 00:00:00'),
 (26, 'Americano/Black Coffee', NULL, 220, 'Large', '2013-09-20 23:56:47', NULL),
 (27, 'Café Caramel', NULL, 245, '', '2013-09-20 23:56:47', NULL),
 (28, 'Café Caramel', NULL, 335, 'Large', '2013-09-20 23:56:47', NULL),
@@ -185,135 +169,6 @@ INSERT INTO `item_types` (`id`, `name`, `created_on`, `updated_on`) VALUES
 (1, 'Lagre', '2013-09-22 14:53:02', '2013-09-22 14:53:04'),
 (2, 'Reguler', '2013-09-22 14:53:06', '2013-09-22 14:53:09'),
 (3, 'General', '2013-09-22 14:53:33', '2013-09-22 14:53:36');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `modules`
---
-
-CREATE TABLE IF NOT EXISTS `modules` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
-
---
--- Dumping data for table `modules`
---
-
-
--- --------------------------------------------------------
-
---
--- Table structure for table `orders`
---
-
-CREATE TABLE IF NOT EXISTS `orders` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `ordernumber` varchar(45) DEFAULT NULL,
-  `subtotal` float DEFAULT NULL,
-  `vat_tax` varchar(45) DEFAULT NULL,
-  `total` float DEFAULT NULL,
-  `created_date` datetime DEFAULT NULL,
-  `updated_date` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
-
---
--- Dumping data for table `orders`
---
-
-
--- --------------------------------------------------------
-
---
--- Table structure for table `roles`
---
-
-CREATE TABLE IF NOT EXISTS `roles` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
-
---
--- Dumping data for table `roles`
---
-
-
--- --------------------------------------------------------
-
---
--- Table structure for table `settings`
---
-
-CREATE TABLE IF NOT EXISTS `settings` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `settings` varchar(45) DEFAULT NULL,
-  `value` varchar(45) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
-
---
--- Dumping data for table `settings`
---
-
-
--- --------------------------------------------------------
-
---
--- Table structure for table `tables`
---
-
-CREATE TABLE IF NOT EXISTS `tables` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `code` varchar(45) DEFAULT NULL,
-  `number` varchar(45) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
-
---
--- Dumping data for table `tables`
---
-
-
--- --------------------------------------------------------
-
---
--- Table structure for table `users`
---
-
-CREATE TABLE IF NOT EXISTS `users` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(45) DEFAULT NULL,
-  `email` varchar(45) DEFAULT NULL,
-  `password` varchar(45) DEFAULT NULL,
-  `created_on` datetime DEFAULT NULL,
-  `updated_on` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=54 ;
-
---
--- Dumping data for table `users`
---
-
-INSERT INTO `users` (`id`, `name`, `email`, `password`, `created_on`, `updated_on`) VALUES
-(53, 'superadmin', 'superadmin@superadmin.com', '0192023a7bbd73250516f069df18b500', '2012-07-29 19:41:02', '2012-07-29 19:41:04');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `vendors`
---
-
-CREATE TABLE IF NOT EXISTS `vendors` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
-
---
--- Dumping data for table `vendors`
---
-
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

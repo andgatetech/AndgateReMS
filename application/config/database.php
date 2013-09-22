@@ -49,9 +49,9 @@ $active_record = TRUE;
 
 /*
 $db['default']['hostname'] = 'localhost';
-$db['default']['username'] = 'dreamerv_andgate';
-$db['default']['password'] = 'dre@m3rv';
-$db['default']['database'] = 'dreamerv_contactdb';
+$db['default']['username'] = 'nextcupb_rems';
+$db['default']['password'] = 'simanto848577';
+$db['default']['database'] = 'nextcupb_rems';
 */
 
 
@@ -59,6 +59,7 @@ $db['default']['hostname'] = 'localhost';
 $db['default']['username'] = 'root';
 $db['default']['password'] = '';
 $db['default']['database'] = 'rsms';
+
 
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';

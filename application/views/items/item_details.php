@@ -18,83 +18,24 @@
 							  </tr>
 						  </thead>   
 						  <tbody>
-							<tr>
-								<td>Chicken Sandwiches	</td>
-								<td class="center">130</td>
-								<td class="center">null</td>
-								<td class="center">
-									<span class="label label-success">Edit</span>&nbsp<span class="label label-important">Delete</span>
-								</td>
-								
-							</tr>
-							<tr>
-								<td>Beef Sandwiches </td>
-								<td class="center">140</td>
-								<td class="center">null</td>
-								<td class="center">
-									<span class="label label-success">Edit</span>&nbsp<span class="label label-important">Delete</span>
-								</td>
-							</tr>
-							<tr>
-								<td>Tuna Sandwiches</td>
-								<td class="center">150</td>
-								<td class="center">null</td>
-								<td class="center">
-									<span class="label label-success">Edit</span>&nbsp<span class="label label-important">Delete</span>
-								</td>
-							</tr>
-							<tr>
-								<td>Vegetable Sandwiches</td>
-								<td class="center">120</td>
-								<td class="center">null</td>
-								<td class="center">
-									<span class="label label-success">Edit</span>&nbsp<span class="label label-important">Delete</span>
-								</td>
-
-							</tr>
-							<tr>
-								<td>Grilled/Cold Chicken Sandwich</td>
-								<td class="center">	160</td>
-								<td class="center">null</td>
-								<td class="center">
-									<span class="label label-success">Edit</span>&nbsp<span class="label label-important">Delete</span>
-								</td>
-							</tr>
-							<tr>
-								<td>Grilled Beef Sandwich</td>
-								<td class="center">170</td>
-								<td class="center">null</td>
-								<td class="center">
-									<span class="label label-success">Edit</span>&nbsp<span class="label label-important">Delete</span>
-								</td>
-
-							</tr>
-							<tr>
-								<td>Espresso</td>
-								<td class="center">105	</td>
-								<td class="center">regular</td>
-								<td class="center">
-									<span class="label label-success">Edit</span>&nbsp<span class="label label-important">Delete</span>
-								</td>						
-							</tr>
-							<tr>
-								<td>Espresso</td>
-								<td class="center">  132</td>
-								<td class="center">large</td>
-								<td class="center">
-									<span class="label label-success">Edit</span>&nbsp<span class="label label-important">Delete</span>
-								</td>				
-							</tr>
-							
-							
-							
-							
-							
-						
-						
-							
-							
-							
+						  <?php
+						  if(isset($items)){
+								foreach($items as $item){
+									?>
+									<tr>
+										<td><?php echo $item->title; ?></td>
+										<td class="center"><?php echo $item->price; ?></td>
+										<td class="center"><?php echo $item->type; ?></td>
+										<td class="center">
+											<a href="<?php echo base_url();?>/menuitem/edit/<?php echo $item->id; ?>"><span class="label label-success">Edit</span></a>&nbsp<a href="<?php echo base_url();?>/menuitem/delete/<?php echo $item->id; ?>"><span class="label label-important">Delete</span></a>
+										</td>
+										
+									</tr>
+							<?php
+								}
+							}
+							 ?>
+					
 						  </tbody>
 					  </table>            
 					</div>

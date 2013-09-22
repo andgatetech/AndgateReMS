@@ -33,6 +33,7 @@
 							  <tr>
 								  <th>Title</th>
 								  <th>Price</th>
+								   <th>Type</th>
 								  <th>Action</th>
 								  							  
 							  </tr>
@@ -40,16 +41,21 @@
 						  <tbody>
 						  <?php
 							if(isset($items)){
+							
 							foreach($items as $item){
 						  ?>
-						  
+						  <form name="product-<?php echo $item->id;?>" method="POST" action="<?php echo base_url();?>/pos/cart_add_item">
+						  <input type="hidden" name="itemid" value="<?php echo $item->id;?>">
 							<tr>
 								<td><?php echo $item->title; ?></td>
 								<td class="center"><?php echo $item->price; ?></td>
-								<td class="center">									
-									<a href="#" class="btn btn-info order-item-number">Add</a>	
+								<td class="center"><?php echo $item->type; ?></td>
+								<td class="center">	
+<input class="btn btn-mini btn-success" type="submit" value="Add">								
+									
 								</td>
 							</tr>
+							</form>
 							<?php 
 								}
 							}
