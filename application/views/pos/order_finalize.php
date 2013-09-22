@@ -52,7 +52,7 @@
 								
 							  </tbody>
 						 </table>
-						 <div class="span12">This is auto generate order reciept</div>
+						 <div class="span12">This is auto generated order reciept</div>
 								</div>
 							</div>
 						

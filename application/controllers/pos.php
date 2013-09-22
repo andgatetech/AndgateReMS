@@ -76,6 +76,11 @@ class Pos extends CI_Controller {
        $this->load->helper('date');
        $data['orderid'] = $_POST['ordernum'];
        $data['ordertype'] = $_POST['orderType'];
+       $data['table'] = $_POST['table'];
+       // checking table is free on not.
+
+       // save order and item also 
+
 
 
        // get all item category
