@@ -79,7 +79,44 @@ class Pos extends CI_Controller {
        $data['table'] = $_POST['table'];
        // checking table is free on not.
 
+       // get vat
+       $settings = new Settings();
+       $settings->where('name', 'vat')->get();
+       $data['vatparcentage'] = $settings->value;
+       $total = $this->cart->format_number($this->cart->total());
+       // Calculate the VAT on the total
+       $data['vat'] = $total * ($data['vatparcentage'] / 100);
+
+        // The total including VAT
+       $totalIncVat = $total + $data['vat'];
+       $data['totalIncVat'] =  $totalIncVat ;
+
+    
        // save order and item also 
+       $order = new Order();
+       $order->ordernumber = $data['orderid'];
+       $order->vatparcentage = $data['vatparcentage'];
+       $order->subtotal = $total;
+       $order->vat_tax = $data['vat'];
+       $order->total = $data['totalIncVat'];
+       $order->status = 'pending';
+       $order->save();
+
+       // save all order item
+       
+       foreach ($this->cart->contents() as $items){
+           $orderitem = new Order_item();
+           $orderitem->ordernumber =  $data['orderid'];
+           $orderitem->item_id =  $items['id'];
+           $orderitem->item_name =  $items['name'];
+           $orderitem->item_type =  $items['type'];
+           $orderitem->item_price =  $items['price'];
+           $orderitem->item_quantity =  $items['qty'];
+           $orderitem->total =  $this->cart->format_number($items['subtotal']);
+
+           $orderitem->save();
+
+       }
 
 
 
@@ -99,7 +136,11 @@ class Pos extends CI_Controller {
         $data['items'] = $items;
         $this->load->view("template", $data);
     }
-    public function order_finished() {
+    public function order_finished($orderid) {
+        $order = new Order();
+        $order->where('ordernumber', $orderid)->get();
+        $order->status = "paid";
+        $order->save();
         $this->cart_destroy();
     }
 

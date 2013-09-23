@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Sep 22, 2013 at 09:47 AM
+-- Generation Time: Sep 23, 2013 at 09:14 AM
 -- Server version: 5.1.41
 -- PHP Version: 5.3.1
 
@@ -46,85 +46,76 @@ CREATE TABLE IF NOT EXISTS `items` (
   `title` varchar(150) DEFAULT NULL,
   `description` text,
   `price` float DEFAULT NULL,
-  `type` enum('Regular','Large','General') DEFAULT NULL,
+  `type` varchar(45) DEFAULT NULL,
   `created_on` datetime DEFAULT NULL,
   `updated_on` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=78 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=140 ;
 
 --
 -- Dumping data for table `items`
 --
 
 INSERT INTO `items` (`id`, `title`, `description`, `price`, `type`, `created_on`, `updated_on`) VALUES
-(1, 'Chicken Sandwiches	', NULL, 130, NULL, '2013-09-20 23:56:47', NULL),
-(5, 'Beef Sandwiches ', NULL, 140, 'General', '2013-09-20 23:56:47', '0000-00-00 00:00:00'),
-(6, 'Tuna Sandwiches', NULL, 150, NULL, '2013-09-20 23:56:47', NULL),
-(7, 'Vegetable Sandwiches', NULL, 120, NULL, '2013-09-20 23:56:47', NULL),
-(8, 'Grilled/Cold Chicken Sandwich', NULL, 160, NULL, '2013-09-20 23:56:47', NULL),
-(9, 'Grilled Beef Sandwich', NULL, 170, NULL, '2013-09-20 23:56:47', NULL),
-(10, 'Grilled Tuna Sandwich', NULL, 180, NULL, '2013-09-20 23:56:47', NULL),
-(11, 'Next Cup Special Salad ', NULL, 275, NULL, '2013-09-20 23:56:47', NULL),
-(12, 'Channa Chat	', NULL, 110, NULL, '2013-09-20 23:56:47', NULL),
-(13, 'Chicken Burger', NULL, 150, NULL, '2013-09-20 23:56:47', NULL),
-(14, 'Beef Burger', NULL, 170, 'General', '2013-09-20 23:56:47', '0000-00-00 00:00:00'),
-(15, 'Vegetable Roll', NULL, 40, NULL, '2013-09-20 23:56:47', NULL),
-(16, 'Chicken Roll', NULL, 65, NULL, '2013-09-20 23:56:47', NULL),
-(17, 'Espresso', NULL, 105, '', '2013-09-20 23:56:47', NULL),
-(18, 'Espresso', NULL, 132, 'Large', '2013-09-20 23:56:47', NULL),
-(19, 'Cappuccino', NULL, 220, '', '2013-09-20 23:56:47', NULL),
-(20, 'Cappuccino', NULL, 310, 'Large', '2013-09-20 23:56:47', NULL),
-(21, 'Café Latte', NULL, 220, '', '2013-09-20 23:56:47', NULL),
-(22, 'Café Latte', NULL, 310, 'Large', '2013-09-20 23:56:47', NULL),
-(23, 'Café Mocca', NULL, 245, '', '2013-09-20 23:56:47', NULL),
-(24, 'Café Mocca', NULL, 320, 'Large', '2013-09-20 23:56:47', NULL),
-(25, 'Americano/Black Coffee	', NULL, 150, 'General', '2013-09-20 23:56:47', '0000-00-00 00:00:00'),
-(26, 'Americano/Black Coffee', NULL, 220, 'Large', '2013-09-20 23:56:47', NULL),
-(27, 'Café Caramel', NULL, 245, '', '2013-09-20 23:56:47', NULL),
-(28, 'Café Caramel', NULL, 335, 'Large', '2013-09-20 23:56:47', NULL),
-(29, 'Café Vanilla', NULL, 245, '', '2013-09-20 23:56:47', NULL),
-(30, 'Café Vanilla', NULL, 335, 'Large', '2013-09-20 23:56:47', NULL),
-(31, 'Hazelnut Cappuccino	', NULL, 245, '', '2013-09-20 23:56:47', NULL),
-(32, 'Hazelnut Cappuccino', NULL, 335, 'Large', '2013-09-20 23:56:47', NULL),
-(33, 'Hazelnut Mocca', NULL, 270, '', '2013-09-20 23:56:47', NULL),
-(34, 'Iced Cappuccino', NULL, 170, '', '2013-09-20 23:56:47', NULL),
-(35, 'Iced Cappuccino', NULL, 220, 'Large', '2013-09-20 23:56:47', NULL),
-(36, 'Iced Mocca', NULL, 190, '', '2013-09-20 23:56:47', NULL),
-(37, 'Iced Mocca', NULL, 240, 'Large', '2013-09-20 23:56:47', NULL),
-(38, 'Iced Espresso', NULL, 145, '', '2013-09-20 23:56:47', NULL),
-(39, 'Iced Espresso	', NULL, 225, 'Large', '2013-09-20 23:56:47', NULL),
-(40, 'Black Tea', NULL, 70, 'General', '2013-09-20 23:56:47', '0000-00-00 00:00:00'),
-(41, 'Green Tea', NULL, 70, NULL, '2013-09-20 23:56:47', NULL),
-(42, 'Earl Grey Tea', NULL, 90, NULL, '2013-09-20 23:56:47', NULL),
-(43, 'Massala Tea', NULL, 100, NULL, '2013-09-20 23:56:47', NULL),
-(44, 'Hazelnut Frappe', NULL, 220, NULL, '2013-09-20 23:56:47', NULL),
-(46, 'Vanilla Frappe	', NULL, 220, NULL, '2013-09-20 23:56:47', NULL),
-(47, 'Caramel Frappe', NULL, 220, NULL, '2013-09-20 23:56:47', NULL),
-(48, 'Mocca Frappe', NULL, 250, NULL, '2013-09-20 23:56:47', NULL),
-(49, 'Original Hot Chocolate', NULL, 180, NULL, '2013-09-20 23:56:47', NULL),
-(50, 'Original White Hot Chocolate', NULL, 200, NULL, '2013-09-20 23:56:47', NULL),
-(51, 'Flavored Hot Chocolate', NULL, 235, NULL, '2013-09-20 23:56:47', NULL),
-(52, 'Passion Fruit Smoothies', NULL, 225, NULL, '2013-09-20 23:56:47', NULL),
-(53, 'Strawberry Smoothies', NULL, 200, NULL, '2013-09-20 23:56:47', NULL),
-(54, 'Mango Smoothies', NULL, 200, NULL, '2013-09-20 23:56:47', NULL),
-(55, 'Iced Chocolate Yogurt', NULL, 250, NULL, '2013-09-20 23:56:47', NULL),
-(56, 'Iced Coffee Yogurt', NULL, 250, NULL, '2013-09-20 23:56:47', NULL),
-(57, 'Yogurt Passion Fruit Frappe', NULL, 260, NULL, '2013-09-20 23:56:47', NULL),
-(58, 'Yogurt Strawberry Frappe', NULL, 235, NULL, '2013-09-20 23:56:47', NULL),
-(59, 'Yogurt Mango Frappe', NULL, 235, NULL, '2013-09-20 23:56:47', NULL),
-(60, 'Lassi	', NULL, 120, NULL, '2013-09-20 23:56:47', NULL),
-(61, 'Vanilla Milk Shake', NULL, 180, NULL, '2013-09-20 23:56:47', NULL),
-(62, 'Strawberry Milk Shake', NULL, 180, NULL, '2013-09-20 23:56:47', NULL),
-(63, 'Lemon Touch	', NULL, 180, NULL, '2013-09-20 23:56:47', NULL),
-(64, 'Freshly Squeezed Lemonade	', NULL, 125, NULL, '2013-09-20 23:56:47', NULL),
-(65, 'Orange Splash	', NULL, 110, NULL, '2013-09-20 23:56:47', NULL),
-(66, 'Iced Lemon Tea', NULL, 135, NULL, '2013-09-20 23:56:47', NULL),
-(67, 'Ice Cream Brownie with Chocolate Sauce', NULL, 150, NULL, '2013-09-20 23:56:47', NULL),
-(68, 'Fruit Cake', NULL, 35, NULL, '2013-09-20 23:56:47', NULL),
-(69, 'Banana Split ', NULL, 160, 'General', '2013-09-20 23:56:47', '0000-00-00 00:00:00'),
-(70, 'Fresh Apple', NULL, 150, NULL, '2013-09-20 23:56:47', NULL),
-(71, 'Fresh Orange', NULL, 150, NULL, '2013-09-20 23:56:47', NULL),
-(72, 'Fresh Water 500 ml', NULL, 20, NULL, '2013-09-20 23:56:47', NULL);
+(81, 'Espresso', '', 75, 'Reguler', '2013-09-23 00:00:00', '2013-09-23 00:00:00'),
+(82, 'Cappuccino', '', 165, 'Reguler', '2013-09-23 00:00:00', '2013-09-23 00:00:00'),
+(83, 'Cappuccino', '', 199, 'Lagre', '2013-09-23 00:00:00', '2013-09-23 00:00:00'),
+(84, 'Espresso', '', 105, 'Lagre', '2013-09-23 00:00:00', '2013-09-23 00:00:00'),
+(85, 'Cafe Latte', '', 169, 'Reguler', '2013-09-23 00:00:00', '2013-09-23 00:00:00'),
+(86, 'Cafe Latte', '', 205, 'Lagre', '2013-09-23 00:00:00', '2013-09-23 00:00:00'),
+(87, 'Cafe Mocha', '', 193, 'Reguler', '2013-09-23 00:00:00', '2013-09-23 00:00:00'),
+(88, 'Cafe Mocha', '', 237, 'Lagre', '2013-09-23 00:00:00', '2013-09-23 00:00:00'),
+(89, 'Americano/ Black Coffee', '', 85, 'Reguler', '2013-09-23 00:00:00', '2013-09-23 00:00:00'),
+(90, 'Americano/ Black Coffee', '', 105, 'Lagre', '2013-09-23 00:00:00', '2013-09-23 00:00:00'),
+(91, 'Cafe Caramel', '', 193, 'Reguler', '2013-09-23 00:00:00', '2013-09-23 00:00:00'),
+(92, 'Cafe Caramel', '', 225, 'Lagre', '2013-09-23 00:00:00', '2013-09-23 00:00:00'),
+(93, 'Cafe Vanilla', '', 180, 'Reguler', '2013-09-23 00:00:00', '2013-09-23 00:00:00'),
+(94, 'Cafe Vanilla', '', 225, 'Lagre', '2013-09-23 00:00:00', '2013-09-23 00:00:00'),
+(95, 'Hazelnut Cappuccino', '', 175, 'Reguler', '2013-09-23 00:00:00', '2013-09-23 00:00:00'),
+(96, 'Hazelnut Cappuccino', '', 220, 'Lagre', '2013-09-23 00:00:00', '2013-09-23 00:00:00'),
+(97, 'Hazelnut Mocha', '', 199, 'Reguler', '2013-09-23 00:00:00', '2013-09-23 00:00:00'),
+(98, 'Hazelnut Mocha', '', 235, 'Lagre', '2013-09-23 00:00:00', '2013-09-23 00:00:00'),
+(99, 'Iced Cappuccino', '', 160, 'Reguler', '2013-09-23 00:00:00', '2013-09-23 00:00:00'),
+(100, 'Iced Cappuccino', '', 199, 'Lagre', '2013-09-23 00:00:00', '2013-09-23 00:00:00'),
+(101, 'Iced Mocha', '', 187, 'Reguler', '2013-09-23 00:00:00', '2013-09-23 00:00:00'),
+(102, 'Iced Mocha', '', 225, 'Lagre', '2013-09-23 00:00:00', '2013-09-23 00:00:00'),
+(103, 'Iced Espresso', '', 105, 'Reguler', '2013-09-23 00:00:00', '2013-09-23 00:00:00'),
+(104, 'Iced Espresso', '', 132, 'Lagre', '2013-09-23 00:00:00', '2013-09-23 00:00:00'),
+(105, 'Green Tea', '', 50, 'General', '2013-09-23 00:00:00', '2013-09-23 00:00:00'),
+(106, 'Black Tea', '', 50, 'General', '2013-09-23 00:00:00', '2013-09-23 00:00:00'),
+(107, 'Earl Grey Tea', '', 80, 'General', '2013-09-23 00:00:00', '2013-09-23 00:00:00'),
+(108, 'Massala Tea', '', 80, 'General', '2013-09-23 00:00:00', '2013-09-23 00:00:00'),
+(109, 'Hazelnut Frappe', '', 170, 'General', '2013-09-23 00:00:00', '2013-09-23 00:00:00'),
+(110, 'Almond Frappe', '', 170, 'General', '2013-09-23 00:00:00', '2013-09-23 00:00:00'),
+(111, 'Vanilla Frappe', '', 170, 'General', '2013-09-23 00:00:00', '2013-09-23 00:00:00'),
+(112, 'Caramel Frappe', '', 170, 'General', '2013-09-23 00:00:00', '2013-09-23 00:00:00'),
+(113, 'Mocha Frappe', '', 190, 'General', '2013-09-23 00:00:00', '2013-09-23 00:00:00'),
+(114, 'Cream and Cookies Frappe', '', 250, 'General', '2013-09-23 00:00:00', '2013-09-23 00:00:00'),
+(115, 'Passion Fruit Smoothies', '', 183, 'General', '2013-09-23 00:00:00', '2013-09-23 00:00:00'),
+(116, 'Strawberry Smoothies', '', 175, 'General', '2013-09-23 00:00:00', '2013-09-23 00:00:00'),
+(117, 'Mango Smoothies', '', 179, 'General', '2013-09-23 00:00:00', '2013-09-23 00:00:00'),
+(118, 'Iced Chocolate Yogurt', '', 199, 'General', '2013-09-23 00:00:00', '2013-09-23 00:00:00'),
+(119, 'Iced Coffee Yogurt', '', 177, 'General', '2013-09-23 00:00:00', '2013-09-23 00:00:00'),
+(120, 'Yogurt Passion Fruit Frape', '', 199, 'General', '2013-09-23 00:00:00', '2013-09-23 00:00:00'),
+(121, 'Yogurt Strawberry Frappe', '', 185, 'General', '2013-09-23 00:00:00', '2013-09-23 00:00:00'),
+(122, 'Yogurt Mango Frappe', '', 190, 'General', '2013-09-23 00:00:00', '2013-09-23 00:00:00'),
+(123, 'Lassi', '', 120, 'General', '2013-09-23 00:00:00', '2013-09-23 00:00:00'),
+(124, 'Vanilla Milk Shake', '', 155, 'General', '2013-09-23 00:00:00', '2013-09-23 00:00:00'),
+(125, 'Strawberry Milk Shake', '', 168, 'General', '2013-09-23 00:00:00', '2013-09-23 00:00:00'),
+(126, 'Lemon Touch', '', 189, 'General', '2013-09-23 00:00:00', '2013-09-23 00:00:00'),
+(127, 'Freshly Squeezed Lemonade', '', 95, 'General', '2013-09-23 00:00:00', '2013-09-23 00:00:00'),
+(128, 'Orange Splash', '', 110, 'General', '2013-09-23 00:00:00', '2013-09-23 00:00:00'),
+(129, 'Iced Lemon Tea', '', 135, 'General', '2013-09-23 00:00:00', '2013-09-23 00:00:00'),
+(130, 'Ice Cream Brownie with Chocolate Sauce', '', 155, 'General', '2013-09-23 00:00:00', '2013-09-23 00:00:00'),
+(131, 'Fruit Cake', '', 35, 'General', '2013-09-23 00:00:00', '2013-09-23 00:00:00'),
+(132, 'Banana Split', '', 160, 'General', '2013-09-23 00:00:00', '2013-09-23 00:00:00'),
+(133, 'Vanilla Mocha', '', 222, 'General', '2013-09-23 00:00:00', '2013-09-23 00:00:00'),
+(134, 'Fresh Apple Juice', '', 150, 'General', '2013-09-23 00:00:00', '2013-09-23 00:00:00'),
+(135, 'Fresh Orange Juice', '', 150, 'General', '2013-09-23 00:00:00', '2013-09-23 00:00:00'),
+(136, 'Water 500ml', '', 20, 'General', '2013-09-23 00:00:00', '2013-09-23 00:00:00'),
+(137, 'Original Hot Chocolate', '', 160, 'General', '2013-09-23 00:00:00', '2013-09-23 00:00:00'),
+(138, 'Original White Hot Chocolate ', '', 180, 'General', '2013-09-23 00:00:00', '2013-09-23 00:00:00'),
+(139, 'Flavored Hot Chocolate', '', 199, 'General', '2013-09-23 00:00:00', '2013-09-23 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -211,18 +202,52 @@ CREATE TABLE IF NOT EXISTS `modules` (
 CREATE TABLE IF NOT EXISTS `orders` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `ordernumber` varchar(45) DEFAULT NULL,
+  `vatparcentage` varchar(45) DEFAULT NULL,
   `subtotal` float DEFAULT NULL,
   `vat_tax` varchar(45) DEFAULT NULL,
   `total` float DEFAULT NULL,
-  `created_date` datetime DEFAULT NULL,
-  `updated_date` datetime DEFAULT NULL,
+  `status` varchar(25) DEFAULT NULL,
+  `created_on` datetime DEFAULT NULL,
+  `updated_on` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=12 ;
 
 --
 -- Dumping data for table `orders`
 --
 
+INSERT INTO `orders` (`id`, `ordernumber`, `vatparcentage`, `subtotal`, `vat_tax`, `total`, `status`, `created_on`, `updated_on`) VALUES
+(11, 'ORD-1379927428', '15', 199, '29.85', 228.85, 'paid', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `order_items`
+--
+
+CREATE TABLE IF NOT EXISTS `order_items` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `ordernumber` varchar(45) DEFAULT NULL,
+  `item_id` int(11) DEFAULT NULL,
+  `item_name` varchar(45) DEFAULT NULL,
+  `item_type` varchar(45) DEFAULT NULL,
+  `item_price` float DEFAULT NULL,
+  `item_quantity` int(11) DEFAULT NULL,
+  `total` float DEFAULT NULL,
+  `created_on` datetime DEFAULT NULL,
+  `updated_on` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=19 ;
+
+--
+-- Dumping data for table `order_items`
+--
+
+INSERT INTO `order_items` (`id`, `ordernumber`, `item_id`, `item_name`, `item_type`, `item_price`, `item_quantity`, `total`, `created_on`, `updated_on`) VALUES
+(15, 'ORD-1379927016', 82, 'Cappuccino', 'Reguler', 165, 1, 165, '0000-00-00 00:00:00', NULL),
+(16, 'ORD-1379927016', 82, 'Cappuccino', 'Reguler', 165, 1, 165, '0000-00-00 00:00:00', NULL),
+(17, 'ORD-1379927016', 82, 'Cappuccino', 'Reguler', 165, 1, 165, '0000-00-00 00:00:00', NULL),
+(18, 'ORD-1379927428', 83, 'Cappuccino', 'Lagre', 199, 1, 199, '0000-00-00 00:00:00', NULL);
 
 -- --------------------------------------------------------
 
@@ -248,15 +273,19 @@ CREATE TABLE IF NOT EXISTS `roles` (
 
 CREATE TABLE IF NOT EXISTS `settings` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `settings` varchar(45) DEFAULT NULL,
+  `name` varchar(45) DEFAULT NULL,
   `value` varchar(45) DEFAULT NULL,
+  `created_on` datetime DEFAULT NULL,
+  `updated_on` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
 
 --
 -- Dumping data for table `settings`
 --
 
+INSERT INTO `settings` (`id`, `name`, `value`, `created_on`, `updated_on`) VALUES
+(1, 'vat', '15', '2013-09-23 13:13:42', '2013-09-23 13:13:44');
 
 -- --------------------------------------------------------
 
@@ -268,13 +297,24 @@ CREATE TABLE IF NOT EXISTS `tables` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `code` varchar(45) DEFAULT NULL,
   `number` varchar(45) DEFAULT NULL,
+  `status` varchar(30) NOT NULL DEFAULT 'Free',
+  `created_on` datetime DEFAULT NULL,
+  `updated_on` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=8 ;
 
 --
 -- Dumping data for table `tables`
 --
 
+INSERT INTO `tables` (`id`, `code`, `number`, `status`, `created_on`, `updated_on`) VALUES
+(1, 'TBL001', 'A1', 'Free', '2013-09-22 16:25:52', NULL),
+(2, 'TBL002', 'A2', 'Free', '2013-09-22 16:26:00', '2013-09-22 16:26:03'),
+(3, 'TBL003', 'A3', 'Booked', '2013-09-22 16:26:17', '2013-09-22 16:26:19'),
+(4, 'TBL004', 'A4', 'Free', '2013-09-22 16:26:30', '2013-09-22 16:26:32'),
+(5, 'TBL005', 'A5', 'Free', '2013-09-23 16:30:27', '2013-09-17 16:30:30'),
+(6, 'TBL006', 'B1', 'Free', '2013-09-22 16:36:35', '2013-09-22 16:36:38'),
+(7, 'TBL007', 'B2', 'Free', '2013-09-22 16:36:57', '2013-09-22 16:37:18');
 
 -- --------------------------------------------------------
 

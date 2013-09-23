@@ -9,7 +9,7 @@
 						</div>
 					</div>
 					<div class="box-content">
-						<div class="span6 center">
+						<div class="span6 center" id="DivIdToPrint">
 								<div class="well">
 								<div class="span12">Order Number: <?php echo $orderid;?></div>
 								<div class="span12">Order Type: <?php echo $ordertype;?></div>
@@ -45,20 +45,35 @@
 		
 								<!-- All Total -->
 								<tr>
-									<td class="center" colspan='3'>Total=</td>
-									<td class="center" colspan='2'><?php echo $this->cart->format_number($this->cart->total()); ?> BDT</td>
+									<td class="center" colspan='4'>Total =</td>
+									<td class="center" ><?php echo $this->cart->format_number($this->cart->total()); ?> BDT</td>
 									                                      
 								</tr> 
 								
+								<!-- Vat/Tax -->
+								<tr>
+									<td class="center" colspan='4'>Vat (<?php echo $vatparcentage;?>%) =</td>
+									<td class="center" ><?php echo $vat; ?> BDT</td>
+									                                      
+								</tr> 
+								
+								<!-- All Total including vat/tas -->
+								<tr>
+									<td class="center" colspan='4'>Total (Vat incld.) =</td>
+									<td class="center" ><?php echo $totalIncVat; ?> BDT</td>
+									                                      
+								</tr>
+								
+								
 							  </tbody>
 						 </table>
-						 <div class="span12">This is auto generated order reciept</div>
+						 <div class="span12">This is auto generated order reciept.</div>
 								</div>
 							</div>
 						
 						<div class="span4 center">
-						  <a href="#" class="btn btn-small btn-success">Print Order</a>&nbsp;
-						  <a href="<?php echo base_url();?>pos/order_finished" class="btn btn-small btn-warning">Finish</a>
+						  <a href="#" class="btn btn-small btn-success" id="printReciept">Print Order</a>&nbsp;
+						  <a href="<?php echo base_url();?>pos/order_finished/<?php echo $orderid;?>" class="btn btn-small btn-warning">Finish</a>
 						</div>  
 						
 						
