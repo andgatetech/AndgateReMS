@@ -37,6 +37,7 @@
 								<label class="control-label" for="selectError">Select Free Table</label>
 								<div class="controls">
 								  <select id="selectTable" data-rel="chosen" name="table">
+								  <option value=''>Select Table</option>
 									<?php
 									if(isset($tables)){
 										foreach($tables as $table){

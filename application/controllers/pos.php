@@ -100,6 +100,7 @@ class Pos extends CI_Controller {
        $order->vat_tax = $data['vat'];
        $order->total = $data['totalIncVat'];
        $order->status = 'pending';
+       $order->created_on = date('Y-m-d H:i:s');
        $order->save();
 
        // save all order item
@@ -113,6 +114,7 @@ class Pos extends CI_Controller {
            $orderitem->item_price =  $items['price'];
            $orderitem->item_quantity =  $items['qty'];
            $orderitem->total =  $this->cart->format_number($items['subtotal']);
+           $orderitem->created_on = date('Y-m-d H:i:s');
 
            $orderitem->save();
 

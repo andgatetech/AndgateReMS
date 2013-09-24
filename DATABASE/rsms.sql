@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Sep 23, 2013 at 09:14 AM
+-- Generation Time: Sep 24, 2013 at 06:24 AM
 -- Server version: 5.1.41
 -- PHP Version: 5.3.1
 
@@ -210,14 +210,12 @@ CREATE TABLE IF NOT EXISTS `orders` (
   `created_on` datetime DEFAULT NULL,
   `updated_on` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=12 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=14 ;
 
 --
 -- Dumping data for table `orders`
 --
 
-INSERT INTO `orders` (`id`, `ordernumber`, `vatparcentage`, `subtotal`, `vat_tax`, `total`, `status`, `created_on`, `updated_on`) VALUES
-(11, 'ORD-1379927428', '15', 199, '29.85', 228.85, 'paid', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -237,17 +235,12 @@ CREATE TABLE IF NOT EXISTS `order_items` (
   `created_on` datetime DEFAULT NULL,
   `updated_on` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=19 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=24 ;
 
 --
 -- Dumping data for table `order_items`
 --
 
-INSERT INTO `order_items` (`id`, `ordernumber`, `item_id`, `item_name`, `item_type`, `item_price`, `item_quantity`, `total`, `created_on`, `updated_on`) VALUES
-(15, 'ORD-1379927016', 82, 'Cappuccino', 'Reguler', 165, 1, 165, '0000-00-00 00:00:00', NULL),
-(16, 'ORD-1379927016', 82, 'Cappuccino', 'Reguler', 165, 1, 165, '0000-00-00 00:00:00', NULL),
-(17, 'ORD-1379927016', 82, 'Cappuccino', 'Reguler', 165, 1, 165, '0000-00-00 00:00:00', NULL),
-(18, 'ORD-1379927428', 83, 'Cappuccino', 'Lagre', 199, 1, 199, '0000-00-00 00:00:00', NULL);
 
 -- --------------------------------------------------------
 
@@ -310,7 +303,7 @@ CREATE TABLE IF NOT EXISTS `tables` (
 INSERT INTO `tables` (`id`, `code`, `number`, `status`, `created_on`, `updated_on`) VALUES
 (1, 'TBL001', 'A1', 'Free', '2013-09-22 16:25:52', NULL),
 (2, 'TBL002', 'A2', 'Free', '2013-09-22 16:26:00', '2013-09-22 16:26:03'),
-(3, 'TBL003', 'A3', 'Booked', '2013-09-22 16:26:17', '2013-09-22 16:26:19'),
+(3, 'TBL003', 'A3', 'Free', '2013-09-22 16:26:17', '2013-09-22 16:26:19'),
 (4, 'TBL004', 'A4', 'Free', '2013-09-22 16:26:30', '2013-09-22 16:26:32'),
 (5, 'TBL005', 'A5', 'Free', '2013-09-23 16:30:27', '2013-09-17 16:30:30'),
 (6, 'TBL006', 'B1', 'Free', '2013-09-22 16:36:35', '2013-09-22 16:36:38'),
