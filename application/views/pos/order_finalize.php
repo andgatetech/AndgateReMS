@@ -45,21 +45,22 @@
 		
 								<!-- All Total -->
 								<tr>
-									<td class="center" colspan='4'>Total =</td>
+									<td class="center" colspan='4'>Sub Total =</td>
 									<td class="center" ><?php echo $this->cart->format_number($this->cart->total()); ?> BDT</td>
 									                                      
 								</tr> 
 								
 								<!-- Vat/Tax -->
 								<tr>
-									<td class="center" colspan='4'>Vat (<?php echo $vatparcentage;?>%) =</td>
+									<td class="center" colspan='4'>Vat (<?php echo $vatparcentage."% ".$vatType;?>)  =</td>
 									<td class="center" ><?php echo $vat; ?> BDT</td>
 									                                      
 								</tr> 
 								
 								<!-- All Total including vat/tas -->
+								
 								<tr>
-									<td class="center" colspan='4'>Total (Vat incld.) =</td>
+									<td class="center" colspan='4'>Total =</td>
 									<td class="center" ><?php echo $totalIncVat; ?> BDT</td>
 									                                      
 								</tr>

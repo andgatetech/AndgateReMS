@@ -32,6 +32,18 @@
 								</div>
 						</div>
 						
+						<div class="control-group">
+								<label class="control-label" for="selectError">VAT</label>
+								
+								<div class="controls">
+								<input type="text" name="vatparcentage" value="15" id="focusedInput" class="input-small focused">%
+								  <select id="selectVatType" name="vatType">
+									<option value="inclusive">Inclusive</option>
+									<option value="exclusive">Exclusive</option>
+								  </select>
+								</div>
+						</div>
+						
 						
 						<div class="control-group">
 								<label class="control-label" for="selectError">Select Free Table</label>

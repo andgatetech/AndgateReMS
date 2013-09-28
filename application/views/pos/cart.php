@@ -19,6 +19,7 @@
 									  <th>Unit Price</th>
 									  <th>Quantity</th>
 									  <th>Total Price</th>
+									  <th>Action</th>
 									                                          
 								  </tr>
 							  </thead>   
@@ -36,6 +37,12 @@
 									
 									</td>
 									<td class="center"><?php echo $this->cart->format_number($items['subtotal']); ?> BDT</td>
+									<td class="center">
+										<a href="<?php echo base_url();?>pos/cart_delete_item/<?php echo $items['rowid'];?>" class="btn btn-danger">
+											<i class="icon-trash icon-white"></i> 
+											Delete
+										</a>
+									</td>
 									                                      
 								</tr>
 								<?php
@@ -47,7 +54,7 @@
 								<tr>
 									
 									
-									<td class="center" colspan='3'>Total=</td>
+									<td class="center" colspan='4'>Total=</td>
 									<td class="center" colspan='2'><?php echo $this->cart->format_number($this->cart->total()); ?> BDT</td>
 									                                      
 								</tr> 

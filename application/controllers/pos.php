@@ -76,8 +76,19 @@ class Pos extends CI_Controller {
        $this->load->helper('date');
        $data['orderid'] = $_POST['ordernum'];
        $data['ordertype'] = $_POST['orderType'];
-       $data['table'] = $_POST['table'];
+       if(isset($_POST['table'])){
+           $data['table'] = $_POST['table'];
+       }
+       
        // checking table is free on not.
+
+       //vat      
+       if(isset($_POST['vatparcentage'])){
+           $data['vatparcentage'] = $_POST['vatparcentage'];
+           $data['vatType'] = $_POST['vatType'];
+
+       }
+
 
        // get vat
        $settings = new Settings();
@@ -85,11 +96,18 @@ class Pos extends CI_Controller {
        $data['vatparcentage'] = $settings->value;
        $total = $this->cart->format_number($this->cart->total());
        // Calculate the VAT on the total
-       $data['vat'] = $total * ($data['vatparcentage'] / 100);
-
-        // The total including VAT
-       $totalIncVat = $total + $data['vat'];
-       $data['totalIncVat'] =  $totalIncVat ;
+       if($data['vatType'] == "exclusive"){
+           $data['vat'] = $total * ($data['vatparcentage'] / 100);
+            // The total including VAT
+           $totalIncVat = $total + $data['vat'];
+           $data['totalIncVat'] =  $totalIncVat ;
+       }elseif($data['vatType'] == "inclusive"){
+           $data['vat'] = $total * ($data['vatparcentage'] / 100);
+            // The total including VAT
+           $totalIncVat = $total;
+           $data['totalIncVat'] =  $totalIncVat ;
+       }
+       
 
     
        // save order and item also 
@@ -98,6 +116,7 @@ class Pos extends CI_Controller {
        $order->vatparcentage = $data['vatparcentage'];
        $order->subtotal = $total;
        $order->vat_tax = $data['vat'];
+       $order->vat_type = $data['vatType'];
        $order->total = $data['totalIncVat'];
        $order->status = 'pending';
        $order->created_on = date('Y-m-d H:i:s');
@@ -231,8 +250,17 @@ class Pos extends CI_Controller {
         $data['items'] = $items;
         $this->load->view("template", $data);
     }
-    public function cart_delete_item() {
+    
+    public function cart_delete_item($rowid) {
         $data['module'] = "pos";
+
+        // remove item from cart
+        $cartitem = array(
+               'rowid' => $rowid,
+               'qty'   => 0
+            );
+
+        $this->cart->update($cartitem);
 
         // get all item category
         $item_category = new Item_category();
