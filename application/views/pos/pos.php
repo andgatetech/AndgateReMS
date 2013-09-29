@@ -10,6 +10,10 @@ if(isset($action)){
 			$this->load->view('pos/order_finalize');
 		break;
 		
+		case "order_reciept":
+			$this->load->view('pos/order_reciept');
+		break;
+		
 		default:
 			$this->load->view('pos/cart');
 		break;

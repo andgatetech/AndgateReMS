@@ -98,6 +98,7 @@ switch ($module) {
 					<!--row -->
 					<?php
 				break;
+
 	
 			}
 		}

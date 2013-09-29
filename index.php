@@ -1,4 +1,5 @@
 <?php
+date_default_timezone_set("Asia/Dhaka");
 ini_set('memory_limit','2000M');
 ini_set('max_execution_time', 1800); //300 seconds = 5 minutes
 ini_set('upload_max_filesize', '300M');

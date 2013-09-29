@@ -113,6 +113,7 @@ class Pos extends CI_Controller {
        // save order and item also 
        $order = new Order();
        $order->ordernumber = $data['orderid'];
+       $order->order_type = $data['ordertype'];
        $order->vatparcentage = $data['vatparcentage'];
        $order->subtotal = $total;
        $order->vat_tax = $data['vat'];
@@ -121,12 +122,13 @@ class Pos extends CI_Controller {
        $order->status = 'pending';
        $order->created_on = date('Y-m-d H:i:s');
        $order->save();
+       $data['orderid'] = $order->id ;
 
        // save all order item
        
        foreach ($this->cart->contents() as $items){
            $orderitem = new Order_item();
-           $orderitem->ordernumber =  $data['orderid'];
+           $orderitem->order_id =  $order->id;
            $orderitem->item_id =  $items['id'];
            $orderitem->item_name =  $items['name'];
            $orderitem->item_type =  $items['type'];
@@ -157,12 +159,69 @@ class Pos extends CI_Controller {
         $data['items'] = $items;
         $this->load->view("template", $data);
     }
+
+    // order payment
+   public function order_payment($orderid) {
+       $data['module'] = "pos";
+       $data['action'] = "order_payment";
+       // generate auto order id
+       $this->load->helper('date');
+       $data['order'] = new Order();
+
+       // get all item category
+        $item_category = new Item_category();
+        $item_categories = $item_category->get();
+        $data['item_categories'] = $item_categories;
+
+        // get all tables
+        $table = new Table();
+        $tables = $table->get();
+        $data['tables'] = $tables;
+
+        // get all items
+        $item = new Item();
+        $items = $item->get();
+        $data['items'] = $items;
+        $this->load->view("template", $data);
+
+   }
+
     public function order_finished($orderid) {
-        $order = new Order();
-        $order->where('ordernumber', $orderid)->get();
+       $data['module'] = "pos";
+       $data['action'] = "order_reciept";
+
+       // get post data
+       $data['paymentType'] = $_POST['paymentType'];
+       $data['paid'] = $_POST['provide'];
+
+       // load order
+        $order = new Order($orderid);
         $order->status = "paid";
+        $order->payment_type = $_POST['paymentType'];
         $order->save();
+        $data['order'] = $order;
+
+        // load all order items
+        $orderitem = new Order_item();
+        $orderitem->where('order_id', $orderid);
+        $orderitems = $orderitem->get();
+        $data['orderitems'] = $orderitems;
+        //$this->cart_destroy();
+
+        // get all item category
+        $item_category = new Item_category();
+        $item_categories = $item_category->get();
+        $data['item_categories'] = $item_categories;
+
+
+        // get all items
+        $item = new Item();
+        $items = $item->get();
+        $data['items'] = $items;
+        $this->load->view("template", $data);
+
         $this->cart_destroy();
+
     }
 
     // DEBUG:: function
