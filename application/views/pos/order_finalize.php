@@ -3,7 +3,7 @@
 					<div class="box-header well" data-original-title>
 						<h2>Order</h2>
 						<div class="box-icon">
-							<a href="#" class="btn btn-setting btn-round"><i class="icon-cog"></i></a>
+							
 							<a href="#" class="btn btn-minimize btn-round"><i class="icon-chevron-up"></i></a>
 							<a href="#" class="btn btn-close btn-round"><i class="icon-remove"></i></a>
 						</div>
@@ -112,13 +112,13 @@
 						<div class="control-group">
 								<label class="control-label" for="selectError">Total</label>
 								<div class="controls">
-								<input class="input-small disabled" id="disabledInput" name="total" type="text" placeholder="Disabled input here…" disabled="" value="<?php echo $totalIncVat;?>">
+								<input class="input-small disabled" id="disabledInput" name="total" type="text" placeholder="Disabled input here…" disabled="" value="<?php echo $totalIncVat;?>"> BDT
 								</div>
 						</div>
 						<div class="control-group">
 								<label class="control-label" for="selectError">Provide</label>
 								<div class="controls">
-								<input type="text" name="provide" value="" id="focusedInput" class="input-small focused">
+								<input type="text" name="provide" value="" id="focusedInput" class="input-small focused"> BDT
 								</div>
 						</div>
 						

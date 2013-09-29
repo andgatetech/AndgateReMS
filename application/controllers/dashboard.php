@@ -23,7 +23,7 @@ class Dashboard extends CI_Controller {
      * pram block :: block/file name
      * type :: string
      */
-    public function index() {
+    public function index($orderid = null) {
         $data['module'] = "dashboard"; //test
 
         // last hour total sale
@@ -52,6 +52,7 @@ class Dashboard extends CI_Controller {
         $lasthour = date('Y-m-d H:i:s', strtotime('-1 hour'));
         $order = new Order();
         $order->select_sum('total','lastHourTotal');
+        $order->where('status', 'paid');
         $order->where_between('created_on', "'$lasthour'", "'$currethour'");
         $data['orders']= $order->get();
         if(empty($order->lastHourTotal)){
@@ -68,6 +69,7 @@ class Dashboard extends CI_Controller {
         $today = date('Y-m-d')." 00:00:00";
         $order = new Order();
         $order->select_sum('total','todayTotal');
+        $order->where('status', 'paid');
         $order->where_between('created_on', "'$today'", "'$currethour'");
         $data['orders']= $order->get();
          if(empty($order->todayTotal)){
@@ -84,6 +86,7 @@ class Dashboard extends CI_Controller {
         $weekstartday = date('Y-m-d H:i:s', strtotime('last Sunday', strtotime(date('Y-m-d').' 00:00:00')));
         $order = new Order();
         $order->select_sum('total','lastWeekTotal');
+        $order->where('status', 'paid');
         $order->where_between('created_on', "'$weekstartday'", "'$currethour'");
         $data['orders']= $order->get();
          if(empty($order->lastWeekTotal)){
@@ -102,6 +105,7 @@ class Dashboard extends CI_Controller {
         $monthstartdate = date('Y-m-d H:i:s', strtotime('first day of this month', strtotime(date('Y-m-d').' 00:00:00')));
         $order = new Order();
         $order->select_sum('total','thisMonthTotal');
+        $order->where('status', 'paid');
         $order->where_between('created_on', "'$monthstartdate'", "'$currethour'");
         $data['orders']= $order->get();
          if(empty($order->thisMonthTotal)){

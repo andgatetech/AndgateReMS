@@ -3,7 +3,7 @@
 					<div class="box-header well" data-original-title>
 						<h2>Order Reciept</h2>
 						<div class="box-icon">
-							<a href="#" class="btn btn-setting btn-round"><i class="icon-cog"></i></a>
+							
 							<a href="#" class="btn btn-minimize btn-round"><i class="icon-chevron-up"></i></a>
 							<a href="#" class="btn btn-close btn-round"><i class="icon-remove"></i></a>
 						</div>
@@ -95,6 +95,7 @@
 						
 						<div class="span6 center">
 						  <a href="#" class="btn btn-small btn-success" id="printReciept">Print Order</a>&nbsp;
+						  <a href="<?php echo base_url();?>pos/index" class="btn btn-small btn-success" id="tst">Finish</a>
 						</div>  
 						
 						

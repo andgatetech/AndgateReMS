@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Sep 24, 2013 at 06:24 AM
+-- Generation Time: Sep 29, 2013 at 12:06 AM
 -- Server version: 5.1.41
 -- PHP Version: 5.3.1
 
@@ -202,15 +202,18 @@ CREATE TABLE IF NOT EXISTS `modules` (
 CREATE TABLE IF NOT EXISTS `orders` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `ordernumber` varchar(45) DEFAULT NULL,
+  `order_type` varchar(45) DEFAULT NULL,
   `vatparcentage` varchar(45) DEFAULT NULL,
   `subtotal` float DEFAULT NULL,
   `vat_tax` varchar(45) DEFAULT NULL,
+  `vat_type` varchar(45) DEFAULT NULL,
   `total` float DEFAULT NULL,
+  `payment_type` varchar(45) DEFAULT NULL,
   `status` varchar(25) DEFAULT NULL,
   `created_on` datetime DEFAULT NULL,
   `updated_on` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=14 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=61 ;
 
 --
 -- Dumping data for table `orders`
@@ -225,7 +228,7 @@ CREATE TABLE IF NOT EXISTS `orders` (
 
 CREATE TABLE IF NOT EXISTS `order_items` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `ordernumber` varchar(45) DEFAULT NULL,
+  `order_id` int(11) DEFAULT NULL,
   `item_id` int(11) DEFAULT NULL,
   `item_name` varchar(45) DEFAULT NULL,
   `item_type` varchar(45) DEFAULT NULL,
@@ -235,7 +238,7 @@ CREATE TABLE IF NOT EXISTS `order_items` (
   `created_on` datetime DEFAULT NULL,
   `updated_on` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=24 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=100 ;
 
 --
 -- Dumping data for table `order_items`

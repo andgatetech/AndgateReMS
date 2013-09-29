@@ -6,7 +6,7 @@
 					<div class="box-header well" data-original-title>
 						<h2><i class="icon-file"></i> Orders</h2>
 						<div class="box-icon">
-							<a href="#" class="btn btn-setting btn-round"><i class="icon-cog"></i></a>
+							
 							<a href="#" class="btn btn-minimize btn-round"><i class="icon-chevron-up"></i></a>
 							<a href="#" class="btn btn-close btn-round"><i class="icon-remove"></i></a>
 						</div>
@@ -32,8 +32,7 @@
 								<td class="center"><?php echo $order->total;?> BDT</td>
 								<td class="center"><?php echo $order->status;?></td>
 								<td class="center">
-									<span class="label label-success">Active</span>
-									<span class="label label-success">Load</span>
+									<a href="<?php echo base_url();?>pos/index/<?php echo $order->id;?>" class="btn btn-mini btn-success" id="tst">Load</a>
 								</td>
 								
 							</tr>
