@@ -1,3 +1,11 @@
+<?php
+// if order load
+if(isset($orderid)){
+	$orderid = $orderid;
+}else{
+	$orderid = null;
+}
+?>
 <div class="box span8">
 
 					<div class="box-header well" data-original-title>
@@ -10,7 +18,7 @@
 					</div>
 					<div class="box-content">
 				
-					<form method="POST" action="<?php echo base_url();?>pos/cart_update_item">
+					<form method="POST" action="<?php echo base_url();?>pos/cart_update_item/<?php echo $orderid;?>">
 						<table class="table table-condensed table-striped">
 							  <thead>
 								  <tr>
@@ -38,7 +46,7 @@
 									</td>
 									<td class="center"><?php echo $this->cart->format_number($items['subtotal']); ?> BDT</td>
 									<td class="center">
-										<a href="<?php echo base_url();?>pos/cart_delete_item/<?php echo $items['rowid'];?>" class="btn btn-danger">
+										<a href="<?php echo base_url();?>pos/cart_delete_item/<?php echo $items['rowid'];?>/<?php echo $orderid;?>" class="btn btn-danger">
 											<i class="icon-trash icon-white"></i> 
 											Delete
 										</a>
@@ -64,7 +72,7 @@
 						 
 						<div class="pagination pagination-centered">
 						 <input class="btn btn-mini btn-primary" type="submit" value="Update Cart">
-						  <a href="<?php echo base_url();?>pos/order_confirm" class="btn btn-small btn-success">Confirm Order</a>&nbsp;
+						  <a href="<?php echo base_url();?>pos/order_confirm/<?php echo $orderid; ?>" class="btn btn-small btn-success">Confirm Order</a>&nbsp;
 						  <a href="<?php echo base_url();?>pos/cart_destroy" class="btn btn-small btn-warning">Cancle Order</a>
 						</div>  
 						</form>	

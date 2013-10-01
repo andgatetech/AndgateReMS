@@ -1,3 +1,11 @@
+<?php
+// load order
+if(isset($order)){
+	$orderid = $order->id;
+}else{
+	//$orderid = null;
+}	
+?>
 <div class="box span4">
 					<div class="box-header well" data-original-title>
 						<h2><i class="icon-user"></i> Items</h2>
@@ -44,7 +52,7 @@
 							
 							foreach($items as $item){
 						  ?>
-						  <form name="product-<?php echo $item->id;?>" method="POST" action="<?php echo base_url();?>/pos/cart_add_item">
+						  <form name="product-<?php echo $item->id;?>" method="POST" action="<?php echo base_url();?>/pos/cart_add_item/<?php if(isset($orderid)) echo $orderid;?>">
 						  <input type="hidden" name="itemid" value="<?php echo $item->id;?>">
 							<tr>
 								<td><?php echo $item->title; ?></td>

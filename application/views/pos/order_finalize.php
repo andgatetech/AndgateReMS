@@ -70,6 +70,7 @@
 						 </table>
 						 
 								</div>
+								<a href="<?php echo base_url();?>pos/cart_destroy" class="btn btn-small btn-warning">Pending Order</a>
 							</div>
 						
 						  

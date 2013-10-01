@@ -39,11 +39,11 @@ class User extends DataMapper {
      function login()
     {
         // backup username for invalid logins
-        $user_name = $this->user_name;
-	$password = md5($this->user_password);
+        $user_name = $this->name;
+	$password = $this->password;
 	//echo $user_name;
         //echo "<br>".$password;
-       // exit;
+       //exit;
         // Create a temporary user object
         $user = new User();
 
@@ -54,7 +54,7 @@ class User extends DataMapper {
         
 
         // Give this user their stored salt
-        //$this->salt = $u->salt;
+       //$this->salt = $u->salt;
 
         // Validate and get this user by their property values,
         // this will see the 'encrypt' validation run, encrypting the password with the salt

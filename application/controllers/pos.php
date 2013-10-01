@@ -25,8 +25,14 @@ class Pos extends CI_Controller {
      * pram block :: block/file name
      * type :: string
      */
-    public function index() {
+    public function index($orderid = null) {
         $data['module'] = "pos";
+
+        // keep track of order data
+        if(isset($orderid)){
+        $data['orderid'] = $orderid;
+        }
+
 
         // get all item category
         $item_category = new Item_category();
@@ -45,12 +51,17 @@ class Pos extends CI_Controller {
         $this->load->view("template", $data);
     }
 
-   public function order_confirm() {
+   public function order_confirm($orderid = null) {
        $data['module'] = "pos";
        $data['action'] = "order_confirm";
+       // load order
+       if(isset($orderid)){
+           $order = new Order($orderid);
+           $data['order'] = $order;
+       }
        // generate auto order id
        $this->load->helper('date');
-       $data['orderid'] = "ORD-".now();
+       $data['ordernum'] = "ORD-".now();
 
        // get all item category
         $item_category = new Item_category();
@@ -74,7 +85,14 @@ class Pos extends CI_Controller {
        $data['action'] = "order_finalize";
        // generate auto order id
        $this->load->helper('date');
-       $data['orderid'] = $_POST['ordernum'];
+
+       // if old order load
+       if($_POST['orderid'] != null){
+           $data['orderid'] = $_POST['orderid'];
+       }else{
+           $data['orderid'] = $_POST['ordernum'];
+       }
+       
        $data['ordertype'] = $_POST['orderType'];
        if(isset($_POST['table'])){
            $data['table'] = $_POST['table'];
@@ -109,9 +127,14 @@ class Pos extends CI_Controller {
        }
        
 
-    
-       // save order and item also 
-       $order = new Order();
+       
+       // save order and item also
+       if($_POST['orderid']!= null){
+         $order = new Order($_POST['orderid']);
+       }else{
+           $order = new Order();
+       }
+       
        $order->ordernumber = $data['orderid'];
        $order->order_type = $data['ordertype'];
        $order->vatparcentage = $data['vatparcentage'];
@@ -125,9 +148,23 @@ class Pos extends CI_Controller {
        $data['orderid'] = $order->id ;
 
        // save all order item
-       
+      // if order edit need to clean db order item before insert
+        if($_POST['orderid']!= null){
+         $orderitems = new Order_item();
+         $orderitems->where('order_id', $_POST['orderid'])->get();
+         // Loop through the all list and delete them one by one
+        foreach ($orderitems->all as $oitem)
+        {
+            $oitem->delete();
+        }
+        
+       }
+      
        foreach ($this->cart->contents() as $items){
+           
            $orderitem = new Order_item();
+           
+           
            $orderitem->order_id =  $order->id;
            $orderitem->item_id =  $items['id'];
            $orderitem->item_name =  $items['name'];
@@ -220,7 +257,7 @@ class Pos extends CI_Controller {
         $data['items'] = $items;
         $this->load->view("template", $data);
 
-        $this->cart_destroy();
+        $this->cart->destroy();
 
     }
 
@@ -250,7 +287,7 @@ class Pos extends CI_Controller {
 
         $this->cart->insert($data);
     }
-     public function cart_add_item() {
+     public function cart_add_item($orderid = null) {
         $data['module'] = "pos";
 
         //get single item
@@ -267,24 +304,11 @@ class Pos extends CI_Controller {
 
         $this->cart->insert($cartitem);
 
-        // get all item category
-        $item_category = new Item_category();
-        $item_categories = $item_category->get();
-        $data['item_categories'] = $item_categories;
+        $this->index($orderid);
 
-        // get all tables
-        $table = new Table();
-        $tables = $table->get();
-        $data['tables'] = $tables;
+   }
 
-        // get all items
-        $item = new Item();
-        $items = $item->get();
-        $data['items'] = $items;
-        $this->load->view("template", $data);
-    }
-
-    public function cart_update_item() {
+    public function cart_update_item($orderid= null) {
         $data['module'] = "pos";
 
         $cartitem = array();
@@ -293,24 +317,11 @@ class Pos extends CI_Controller {
         }
         $this->cart->update($cartitem);
 
-        // get all item category
-        $item_category = new Item_category();
-        $item_categories = $item_category->get();
-        $data['item_categories'] = $item_categories;
+        $this->index($orderid);
 
-        // get all tables
-        $table = new Table();
-        $tables = $table->get();
-        $data['tables'] = $tables;
-
-        // get all items
-        $item = new Item();
-        $items = $item->get();
-        $data['items'] = $items;
-        $this->load->view("template", $data);
     }
     
-    public function cart_delete_item($rowid) {
+    public function cart_delete_item($rowid, $orderid = null) {
         $data['module'] = "pos";
 
         // remove item from cart
@@ -321,21 +332,7 @@ class Pos extends CI_Controller {
 
         $this->cart->update($cartitem);
 
-        // get all item category
-        $item_category = new Item_category();
-        $item_categories = $item_category->get();
-        $data['item_categories'] = $item_categories;
-
-        // get all tables
-        $table = new Table();
-        $tables = $table->get();
-        $data['tables'] = $tables;
-
-        // get all items
-        $item = new Item();
-        $items = $item->get();
-        $data['items'] = $items;
-        $this->load->view("template", $data);
+       $this->index($orderid);
     }
     public function cart_destroy() {
         $data['module'] = "pos";
@@ -357,6 +354,45 @@ class Pos extends CI_Controller {
         $items = $item->get();
         $data['items'] = $items;
         $this->load->view("template", $data);
+    }
+    // GET ORDER DETAILS
+    public function get_order($orderid){
+        // load order details
+        $order = new Order($orderid);
+        $data['order'] = $order;
+
+        // load order related item
+        $orderitem = new Order_item();
+        $orderitems = $orderitem->where('order_id',$order->id)->get();
+        $data['orderitems'] = $orderitems;
+
+        return $data;
+
+
+    }
+    // LOAD ORDER
+    public function load_order($orderid){
+        $this->cart->destroy();
+        $orderdata = $this->get_order($orderid);
+        //echo "<pre>";
+       // print_r($orderdata['orderitems']);
+       // exit;
+        // load items to cart
+        foreach($orderdata['orderitems'] as $singleitem){
+            $cartitem = array(
+               'orderitemid'      => $singleitem->id,
+               'id'      => $singleitem->item_id,
+               'name'    => $singleitem->item_name,
+               'qty'     => $singleitem->item_quantity 	,
+               'price'   => $singleitem->item_price,
+               'type'   => $singleitem->item_type,
+
+
+            );
+
+            $this->cart->insert($cartitem);
+        }
+         $this->index($orderid);
     }
 
 }

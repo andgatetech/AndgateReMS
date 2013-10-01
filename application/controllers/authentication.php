@@ -19,19 +19,19 @@ class Authentication extends CI_Controller {
 
     public function login() {
         $userid = $this->input->post('username');
-        $password = $this->input->post('password');
+        $password = md5($this->input->post('password'));
         
         $user = new User();
 
-        $user->user_name = $userid;
-        $user->user_password = $password;
+        $user->name = $userid;
+        $user->password = $password;
 
 
 
 
         // CHECK USER ID, AND PASSWORD
-        //if ($user->login()) {
-        if (true) { //test case
+       if ($user->login()) {
+        //if (true) { //test case
             // CHECK USER  TYPE
             $reuser = new User();
             $reuser->where('name', $userid);
@@ -44,8 +44,8 @@ class Authentication extends CI_Controller {
                 // SET SESSION
                 $userdata = array(
                     'userid' => $reuser->id,
-                    'username' => $reuser->user_name,
-                    'email' => $reuser->user_email,
+                    'username' => $reuser->name,
+                    'email' => $reuser->email,
                     'logged_in' => TRUE
                 );
 

@@ -32,7 +32,10 @@
 								<td class="center"><?php echo $order->total;?> BDT</td>
 								<td class="center"><?php echo $order->status;?></td>
 								<td class="center">
-									<a href="<?php echo base_url();?>pos/index/<?php echo $order->id;?>" class="btn btn-mini btn-success" id="tst">Load</a>
+									<?php
+									if($order->status == "pending"){ ?>
+									<a href="<?php echo base_url();?>pos/load_order/<?php echo $order->id;?>" class="btn btn-mini btn-success" id="tst">Load</a>
+									<?php } ?>
 								</td>
 								
 							</tr>

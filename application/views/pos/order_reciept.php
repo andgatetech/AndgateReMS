@@ -30,7 +30,7 @@
 							  
 							  $i = 1;
 								foreach ($orderitems as $orderitem){
-								print_r($orderitems->item_name);
+								//print_r($orderitems->item_name);
 								?>
 								
 								<tr>
@@ -38,7 +38,7 @@
 									<td><?php echo $orderitem->item_type;?></td>
 									<td class="center"><?php echo $orderitem->item_price;?></td>
 									<td class="center"><?php echo $orderitem->item_quantity;?></td>
-									<td class="center"><?php echo $orderitem->total;?> BDT</td>
+									<td class="center"><?php echo $orderitem->total;?> Tk</td>
 									                                      
 								</tr>
 								<?php
@@ -49,14 +49,14 @@
 								<!-- All Total -->
 								<tr>
 									<td class="center" colspan='4'>Sub Total =</td>
-									<td class="center" ><?php echo $order->subtotal; ?> BDT</td>
+									<td class="center" ><?php echo $order->subtotal; ?> Tk</td>
 									                                      
 								</tr> 
 								
 								<!-- Vat/Tax -->
 								<tr>
 									<td class="center" colspan='4'>Vat (<?php echo $order->vatparcentage."% ".$order->vat_type;?>)  =</td>
-									<td class="center" ><?php echo $order->vat_tax; ?> BDT</td>
+									<td class="center" ><?php echo $order->vat_tax; ?> Tk</td>
 									                                      
 								</tr> 
 								
@@ -64,13 +64,13 @@
 								
 								<tr>
 									<td class="center" colspan='4'>Total =</td>
-									<td class="center" ><?php echo $order->total; ?> BDT</td>
+									<td class="center" ><?php echo $order->total; ?> Tk</td>
 									                                      
 								</tr>
 								
 								<tr>
 									<td class="center" colspan='4'>Paid =</td>
-									<td class="center" ><?php echo $paid; ?> BDT</td>
+									<td class="center" ><?php echo $paid; ?> Tk</td>
 									                                      
 								</tr>
 								
@@ -80,7 +80,7 @@
 									<?php 
 									
 									echo $paid-$order->total; 
-									?> BDT
+									?> Tk
 									</td>
 									                                      
 								</tr>

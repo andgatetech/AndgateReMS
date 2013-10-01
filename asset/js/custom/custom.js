@@ -51,9 +51,9 @@ setTimeout(function(){newWin.close();},10);
 
 }
 function PrintMe(DivID) {
-var disp_setting="toolbar=yes,location=no,";
-disp_setting+="directories=yes,menubar=yes,";
-disp_setting+="scrollbars=yes,width=650, height=600, left=100, top=25";
+var disp_setting="toolbar=no,location=no,";
+disp_setting+="directories=no,menubar=no,";
+disp_setting+="scrollbars=no,width=450, height=350, left=100, top=25";
    var content_vlue = document.getElementById(DivID).innerHTML;
    var docprint=window.open("","",disp_setting);
    docprint.document.open();
@@ -61,14 +61,6 @@ disp_setting+="scrollbars=yes,width=650, height=600, left=100, top=25";
    docprint.document.write('"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">');
    docprint.document.write('<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">');
    docprint.document.write('<head><title>Nextcup</title>');
-   
-   docprint.document.write('<link id="bs-css" href="<?php echo base_url();?>asset/css/bootstrap-cerulean.css" rel="stylesheet">');
-   docprint.document.write('<link href="<?php echo base_url();?>asset/css/bootstrap-responsive.css" rel="stylesheet">');
-   docprint.document.write('<link id="bs-css" href="<?php echo base_url();?>asset/css/bootstrap-cerulean.css" rel="stylesheet">');
-   docprint.document.write('<link id="bs-css" href="<?php echo base_url();?>asset/css/bootstrap-cerulean.css" rel="stylesheet">');
-   docprint.document.write('<link id="bs-css" href="<?php echo base_url();?>asset/css/bootstrap-cerulean.css" rel="stylesheet">');
-   docprint.document.write('<link id="bs-css" href="<?php echo base_url();?>asset/css/bootstrap-cerulean.css" rel="stylesheet">');
-   docprint.document.write('<link id="bs-css" href="<?php echo base_url();?>asset/css/bootstrap-cerulean.css" rel="stylesheet">');
    
    docprint.document.write('<style type="text/css">body{ margin:0px;');
    docprint.document.write('font-family:verdana,Arial;color:#000;');
@@ -79,4 +71,5 @@ disp_setting+="scrollbars=yes,width=650, height=600, left=100, top=25";
    docprint.document.write('</center></body></html>');
    docprint.document.close();
    docprint.focus();
+   
 }
