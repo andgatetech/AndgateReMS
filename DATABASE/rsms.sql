@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Sep 29, 2013 at 12:46 AM
+-- Generation Time: Oct 03, 2013 at 09:39 AM
 -- Server version: 5.1.41
 -- PHP Version: 5.3.1
 
@@ -65,8 +65,8 @@ INSERT INTO `items` (`id`, `title`, `description`, `price`, `type`, `created_on`
 (86, 'Cafe Latte', '', 205, 'Lagre', '2013-09-23 00:00:00', '2013-09-23 00:00:00'),
 (87, 'Cafe Mocha', '', 193, 'Reguler', '2013-09-23 00:00:00', '2013-09-23 00:00:00'),
 (88, 'Cafe Mocha', '', 237, 'Lagre', '2013-09-23 00:00:00', '2013-09-23 00:00:00'),
-(89, 'Americano/ Black Coffee', '', 85, 'Reguler', '2013-09-23 00:00:00', '2013-09-23 00:00:00'),
-(90, 'Americano/ Black Coffee', '', 105, 'Lagre', '2013-09-23 00:00:00', '2013-09-23 00:00:00'),
+(89, 'Americano-Black Coffee', '', 85, 'Reguler', '2013-09-23 00:00:00', '2013-09-23 00:00:00'),
+(90, 'Americano-Black Coffee', '', 105, 'Lagre', '2013-09-23 00:00:00', '2013-09-23 00:00:00'),
 (91, 'Cafe Caramel', '', 193, 'Reguler', '2013-09-23 00:00:00', '2013-09-23 00:00:00'),
 (92, 'Cafe Caramel', '', 225, 'Lagre', '2013-09-23 00:00:00', '2013-09-23 00:00:00'),
 (93, 'Cafe Vanilla', '', 180, 'Reguler', '2013-09-23 00:00:00', '2013-09-23 00:00:00'),
@@ -213,12 +213,14 @@ CREATE TABLE IF NOT EXISTS `orders` (
   `created_on` datetime DEFAULT NULL,
   `updated_on` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=63 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
 
 --
 -- Dumping data for table `orders`
 --
 
+INSERT INTO `orders` (`id`, `ordernumber`, `order_type`, `vatparcentage`, `subtotal`, `vat_tax`, `vat_type`, `total`, `payment_type`, `status`, `created_on`, `updated_on`) VALUES
+(2, '2', 'table', '15', 75, '11.25', 'inclusive', 75, '', 'paid', '2013-10-03 16:38:44', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -238,12 +240,14 @@ CREATE TABLE IF NOT EXISTS `order_items` (
   `created_on` datetime DEFAULT NULL,
   `updated_on` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=108 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=10 ;
 
 --
 -- Dumping data for table `order_items`
 --
 
+INSERT INTO `order_items` (`id`, `order_id`, `item_id`, `item_name`, `item_type`, `item_price`, `item_quantity`, `total`, `created_on`, `updated_on`) VALUES
+(9, 2, 81, 'Espresso', 'Reguler', 75, 1, 75, '2013-10-03 16:38:44', NULL);
 
 -- --------------------------------------------------------
 
@@ -333,7 +337,7 @@ CREATE TABLE IF NOT EXISTS `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `password`, `created_on`, `updated_on`) VALUES
-(53, 'superadmin', 'superadmin@superadmin.com', '0192023a7bbd73250516f069df18b500', '2012-07-29 19:41:02', '2012-07-29 19:41:04');
+(53, 'superadmin', 'superadmin@superadmin.com', 'a009dacbb04aaf267f40b61ef315d7ad', '2012-07-29 19:41:02', '2012-07-29 19:41:04');
 
 -- --------------------------------------------------------
 

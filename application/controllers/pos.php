@@ -394,6 +394,15 @@ class Pos extends CI_Controller {
         }
          $this->index($orderid);
     }
+	
+	// DEBUG:: DELETE ALL ORDER
+	public function clear_order(){
+		$order = new Order();
+		$order->get()->delete_all();
+		
+		$order_items = new Order_item();
+                $order_items->get()->delete_all();
+	}
 
 }
 
