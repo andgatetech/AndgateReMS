@@ -18,6 +18,7 @@ jQuery(document).ready(function(){
     });
     // This button will decrement the value till 0
     $(".qtyminus").click(function(e) {
+	alert('No');
         // Stop acting like a button
         e.preventDefault();
         // Get the field name
