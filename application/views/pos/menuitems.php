@@ -16,16 +16,19 @@ if(isset($order)){
 						</div>
 					</div>
 					<div class="box-content">
+                   
 						<div class="searchbox-ajax">
+                         <form method='POST' action="<?php echo base_url(); ?>/pos/index">
 							<div class="control-group">
 								<label class="control-label" for="selectError">Select Category</label>
 								<div class="controls">
-								  <select id="selectError" data-rel="chosen">
+								  <select id="selectError" data-rel="chosen" name="category">
+                                  <option value=""></option>
 									<?php
 									if(isset($item_categories)){
 										foreach($item_categories as $category){
 										?>
-										<option><?php echo $category->name; ?></option>
+										<option value="<?php echo $category->id; ?>"><?php echo $category->name; ?></option>
 										<?php
 										
 										}
@@ -35,7 +38,15 @@ if(isset($order)){
 								  </select>
 								</div>
 							  </div>
+                              <div class="control-group">
+								<div class="controls">
+								  <input type="submit" value="Load Items" class="btn btn-small btn-primary">
+								</div>
+							  </div>
+                            </form>  
 						</div>
+                    
+                        
 						<table class="table table-striped table-bordered bootstrap-datatable">
 						<thead>
 							  <tr>
@@ -66,7 +77,13 @@ if(isset($order)){
 							</form>
 							<?php 
 								}
-							}
+							}else{
+								?>
+                                <tr>
+								<td class="center" colspan="4">There is no item at selected group.</td>
+							</tr>
+							<?php	
+								}
 							?>
 		
 						  </tbody>

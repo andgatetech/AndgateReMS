@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Oct 03, 2013 at 09:39 AM
+-- Generation Time: Oct 05, 2013 at 09:36 PM
 -- Server version: 5.1.41
 -- PHP Version: 5.3.1
 
@@ -50,7 +50,7 @@ CREATE TABLE IF NOT EXISTS `items` (
   `created_on` datetime DEFAULT NULL,
   `updated_on` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=140 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=144 ;
 
 --
 -- Dumping data for table `items`
@@ -115,7 +115,8 @@ INSERT INTO `items` (`id`, `title`, `description`, `price`, `type`, `created_on`
 (136, 'Water 500ml', '', 20, 'General', '2013-09-23 00:00:00', '2013-09-23 00:00:00'),
 (137, 'Original Hot Chocolate', '', 160, 'General', '2013-09-23 00:00:00', '2013-09-23 00:00:00'),
 (138, 'Original White Hot Chocolate ', '', 180, 'General', '2013-09-23 00:00:00', '2013-09-23 00:00:00'),
-(139, 'Flavored Hot Chocolate', '', 199, 'General', '2013-09-23 00:00:00', '2013-09-23 00:00:00');
+(139, 'Flavored Hot Chocolate', '', 199, 'General', '2013-09-23 00:00:00', '2013-09-23 00:00:00'),
+(143, 'test', 'test', 100, 'Reguler', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -180,6 +181,34 @@ INSERT INTO `item_types` (`id`, `name`, `created_on`, `updated_on`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `join_item_categories_items`
+--
+
+CREATE TABLE IF NOT EXISTS `join_item_categories_items` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `item_id` int(11) NOT NULL,
+  `item_category_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`,`item_id`,`item_category_id`),
+  KEY `fk_join_items_item_catgories_items_idx` (`item_id`),
+  KEY `fk_join_items_item_catgories_item_categories1_idx` (`item_category_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=15 ;
+
+--
+-- Dumping data for table `join_item_categories_items`
+--
+
+INSERT INTO `join_item_categories_items` (`id`, `item_id`, `item_category_id`) VALUES
+(10, 89, 1),
+(11, 90, 16),
+(14, 91, 10),
+(13, 106, 15),
+(9, 110, 1),
+(12, 132, 16),
+(5, 143, 6);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `modules`
 --
 
@@ -209,18 +238,19 @@ CREATE TABLE IF NOT EXISTS `orders` (
   `vat_type` varchar(45) DEFAULT NULL,
   `total` float DEFAULT NULL,
   `payment_type` varchar(45) DEFAULT NULL,
+  `choosen_space` varchar(45) DEFAULT NULL,
   `status` varchar(25) DEFAULT NULL,
   `created_on` datetime DEFAULT NULL,
   `updated_on` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
 
 --
 -- Dumping data for table `orders`
 --
 
-INSERT INTO `orders` (`id`, `ordernumber`, `order_type`, `vatparcentage`, `subtotal`, `vat_tax`, `vat_type`, `total`, `payment_type`, `status`, `created_on`, `updated_on`) VALUES
-(2, '2', 'table', '15', 75, '11.25', 'inclusive', 75, '', 'paid', '2013-10-03 16:38:44', '0000-00-00 00:00:00');
+INSERT INTO `orders` (`id`, `ordernumber`, `order_type`, `vatparcentage`, `subtotal`, `vat_tax`, `vat_type`, `total`, `payment_type`, `choosen_space`, `status`, `created_on`, `updated_on`) VALUES
+(5, 'ORD-1381008628', 'takeaway', '15', 435, '65.25', 'inclusive', 435, NULL, 'B1', 'pending', '2013-10-06 04:33:07', NULL);
 
 -- --------------------------------------------------------
 
@@ -240,14 +270,16 @@ CREATE TABLE IF NOT EXISTS `order_items` (
   `created_on` datetime DEFAULT NULL,
   `updated_on` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=10 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=19 ;
 
 --
 -- Dumping data for table `order_items`
 --
 
 INSERT INTO `order_items` (`id`, `order_id`, `item_id`, `item_name`, `item_type`, `item_price`, `item_quantity`, `total`, `created_on`, `updated_on`) VALUES
-(9, 2, 81, 'Espresso', 'Reguler', 75, 1, 75, '2013-10-03 16:38:44', NULL);
+(16, 5, 90, 'Americano-Black Coffee', 'Lagre', 105, 1, 105, '2013-10-06 04:33:07', NULL),
+(17, 5, 132, 'Banana Split', 'General', 160, 1, 160, '2013-10-06 04:33:07', NULL),
+(18, 5, 110, 'Almond Frappe', 'General', 170, 1, 170, '2013-10-06 04:33:07', NULL);
 
 -- --------------------------------------------------------
 
@@ -354,6 +386,17 @@ CREATE TABLE IF NOT EXISTS `vendors` (
 -- Dumping data for table `vendors`
 --
 
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `join_item_categories_items`
+--
+ALTER TABLE `join_item_categories_items`
+  ADD CONSTRAINT `fk_join_items_item_catgories_items` FOREIGN KEY (`item_id`) REFERENCES `items` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_join_items_item_catgories_item_categories1` FOREIGN KEY (`item_category_id`) REFERENCES `item_categories` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

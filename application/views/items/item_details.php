@@ -14,6 +14,7 @@
 								  <th>Tittle</th>
 								  <th>Price</th>
 								  <th>Type</th>
+                                  <th>Category</th>
 								  <th>Action</th>							  
 							  </tr>
 						  </thead>   
@@ -26,6 +27,7 @@
 										<td><?php echo $item->title; ?></td>
 										<td class="center"><?php echo $item->price; ?></td>
 										<td class="center"><?php echo $item->type; ?></td>
+                                        <td class="center"><?php echo $item->item_category->name; ?></td>
 										<td class="center">
 											<a href="<?php echo base_url();?>/menuitem/edit/<?php echo $item->id; ?>"><span class="label label-success">Edit</span></a>&nbsp<a href="<?php echo base_url();?>/menuitem/delete/<?php echo $item->id; ?>"><span class="label label-important">Delete</span></a>
 										</td>

@@ -37,3 +37,5 @@ height:30px;
 font-size:24px;
 text-align:right;
 }
+input.qtyplus { width:25px; height:25px;}
+input.qtyminus { width:25px; height:25px;}
