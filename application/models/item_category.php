@@ -14,7 +14,7 @@
 class Item_category extends DataMapper {
 
     var $table = 'item_categories';
-    var $has_one = array('group');
+    var $has_many = array('item');
     
     var $default_order_by = array('updated_on' => 'desc');
     

@@ -29,6 +29,10 @@ class Menuitem extends CI_Controller {
         $item_types = $item_type->get();
         $data['item_types'] = $item_types;
 
+        // get all item category
+        $category = new Item_category();
+        $data['categories'] = $category->get();
+
         $item = new Item();
         $items = $item->get();
         $data['items'] = $items;
@@ -45,15 +49,23 @@ class Menuitem extends CI_Controller {
         $item_types = $item_type->get();
         $data['item_types'] = $item_types;
 
+        $category = new Item_category($_POST['category']);
+
         $item = new Item();
         $item->title = $_POST['title'];
         $item->description = $_POST['desc'];
         $item->price = $_POST['price'];
         $item->type = $_POST['type'];
-        $item->save();
+        $item->save($category);
+
+        // get all item category
+        $category = new Item_category();
+        $data['categories'] = $category->get();
         // get all items
         $items = $item->get();
         $data['items'] = $items;
+
+
         $data['msg'] = 'Item saved successfully.';
         $this->load->view("template", $data);
     }
@@ -69,6 +81,10 @@ class Menuitem extends CI_Controller {
 
         $item = new Item($itemid);
         $item->delete();
+
+        // get all item category
+        $category = new Item_category();
+        $data['categories'] = $category->get();
         // get all items
         $items = $item->get();
         $data['items'] = $items;
@@ -90,7 +106,9 @@ class Menuitem extends CI_Controller {
         // get single items
         $data['singleitem'] = $singleitem;
 
-
+        // get all item category
+        $category = new Item_category();
+        $data['categories'] = $category->get();
         $item = new Item($itemid);
         // get all items
         $items = $item->get();
@@ -107,12 +125,20 @@ class Menuitem extends CI_Controller {
         $item_types = $item_type->get();
         $data['item_types'] = $item_types;
 
+        $singlecategory = new Item_category($_POST['category']);
+        //echo $singlecategory->name;
+        //exit;
+
         $item = new Item($_POST['id']);
         $item->title = $_POST['title'];
         $item->description = $_POST['desc'];
         $item->price = $_POST['price'];
         $item->type = $_POST['type'];
-        $item->save();
+        $item->save(array($singlecategory));
+
+        // get all item category
+        $category = new Item_category();
+        $data['categories'] = $category->get();
         // get all items
         $items = $item->get();
         $data['items'] = $items;
