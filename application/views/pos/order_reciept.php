@@ -21,7 +21,7 @@
 									  <th>Type</th>
 									  <th>Unit Price</th>
 									  <th>Quantity</th>
-									  <th>Total Price</th>
+									  <th>Total (Tk)</th>
 									                                          
 								  </tr>
 							  </thead>   
@@ -38,7 +38,7 @@
 									<td><?php echo $orderitem->item_type;?></td>
 									<td class="center"><?php echo $orderitem->item_price;?></td>
 									<td class="center"><?php echo $orderitem->item_quantity;?></td>
-									<td class="center"><?php echo $orderitem->total;?> Tk</td>
+									<td class="center"><?php echo $orderitem->total;?> </td>
 									                                      
 								</tr>
 								<?php
@@ -49,14 +49,14 @@
 								<!-- All Total -->
 								<tr>
 									<td class="center" colspan='4'>Sub Total =</td>
-									<td class="center" ><?php echo $order->subtotal; ?> Tk</td>
+									<td class="center" ><?php echo $order->subtotal; ?> </td>
 									                                      
 								</tr> 
 								
 								<!-- Vat/Tax -->
 								<tr>
 									<td class="center" colspan='4'>Vat (<?php echo $order->vatparcentage."% ".$order->vat_type;?>)  =</td>
-									<td class="center" ><?php echo $order->vat_tax; ?> Tk</td>
+									<td class="center" ><?php echo $order->vat_tax; ?> </td>
 									                                      
 								</tr> 
 								
@@ -64,13 +64,24 @@
 								
 								<tr>
 									<td class="center" colspan='4'>Total =</td>
-									<td class="center" ><?php echo $order->total; ?> Tk</td>
+									<td class="center" ><?php echo $order->total; ?> </td>
+									                                      
+								</tr>
+								<tr>
+									<td class="center" colspan='4'>Discount (<?php echo $discount;?>%) =</td>
+									<td class="center" ><?php echo $order->discount; ?> </td>
 									                                      
 								</tr>
 								
 								<tr>
 									<td class="center" colspan='4'>Paid =</td>
-									<td class="center" ><?php echo $paid; ?> Tk</td>
+									<td class="center" ><?php echo $order->paid; ?> </td>
+									                                      
+								</tr>
+								
+								<tr>
+									<td class="center" colspan='4'>Provide =</td>
+									<td class="center" ><?php echo $provide; ?> </td>
 									                                      
 								</tr>
 								
@@ -79,8 +90,8 @@
 									<td class="center" >
 									<?php 
 									
-									echo $paid-$order->total; 
-									?> Tk
+									echo $provide-$order->paid; 
+									?> 
 									</td>
 									                                      
 								</tr>

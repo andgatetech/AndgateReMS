@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Oct 05, 2013 at 09:36 PM
+-- Generation Time: Oct 10, 2013 at 09:47 AM
 -- Server version: 5.1.41
 -- PHP Version: 5.3.1
 
@@ -239,18 +239,20 @@ CREATE TABLE IF NOT EXISTS `orders` (
   `total` float DEFAULT NULL,
   `payment_type` varchar(45) DEFAULT NULL,
   `choosen_space` varchar(45) DEFAULT NULL,
+  `discount` float DEFAULT NULL,
+  `paid` float DEFAULT NULL,
   `status` varchar(25) DEFAULT NULL,
   `created_on` datetime DEFAULT NULL,
   `updated_on` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=11 ;
 
 --
 -- Dumping data for table `orders`
 --
 
-INSERT INTO `orders` (`id`, `ordernumber`, `order_type`, `vatparcentage`, `subtotal`, `vat_tax`, `vat_type`, `total`, `payment_type`, `choosen_space`, `status`, `created_on`, `updated_on`) VALUES
-(5, 'ORD-1381008628', 'takeaway', '15', 435, '65.25', 'inclusive', 435, NULL, 'B1', 'pending', '2013-10-06 04:33:07', NULL);
+INSERT INTO `orders` (`id`, `ordernumber`, `order_type`, `vatparcentage`, `subtotal`, `vat_tax`, `vat_type`, `total`, `payment_type`, `choosen_space`, `discount`, `paid`, `status`, `created_on`, `updated_on`) VALUES
+(10, 'ORD-1381397583', 'table', '15', 170, '25.5', 'exclusive', 195.5, 'table', 'B2', 19.55, 175.95, 'paid', '2013-10-10 16:33:09', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -270,16 +272,14 @@ CREATE TABLE IF NOT EXISTS `order_items` (
   `created_on` datetime DEFAULT NULL,
   `updated_on` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=19 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=25 ;
 
 --
 -- Dumping data for table `order_items`
 --
 
 INSERT INTO `order_items` (`id`, `order_id`, `item_id`, `item_name`, `item_type`, `item_price`, `item_quantity`, `total`, `created_on`, `updated_on`) VALUES
-(16, 5, 90, 'Americano-Black Coffee', 'Lagre', 105, 1, 105, '2013-10-06 04:33:07', NULL),
-(17, 5, 132, 'Banana Split', 'General', 160, 1, 160, '2013-10-06 04:33:07', NULL),
-(18, 5, 110, 'Almond Frappe', 'General', 170, 1, 170, '2013-10-06 04:33:07', NULL);
+(24, 10, 110, 'Almond Frappe', 'General', 170, 1, 170, '2013-10-10 16:33:09', NULL);
 
 -- --------------------------------------------------------
 
@@ -347,6 +347,28 @@ INSERT INTO `tables` (`id`, `code`, `number`, `status`, `created_on`, `updated_o
 (5, 'TBL005', 'A5', 'Free', '2013-09-23 16:30:27', '2013-09-17 16:30:30'),
 (6, 'TBL006', 'B1', 'Free', '2013-09-22 16:36:35', '2013-09-22 16:36:38'),
 (7, 'TBL007', 'B2', 'Free', '2013-09-22 16:36:57', '2013-09-22 16:37:18');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tasks`
+--
+
+CREATE TABLE IF NOT EXISTS `tasks` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(45) DEFAULT NULL,
+  `desc` varchar(250) DEFAULT NULL,
+  `status` varchar(45) DEFAULT NULL,
+  `assignee` varchar(45) DEFAULT NULL,
+  `created_on` datetime DEFAULT NULL,
+  `updated_on` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+--
+-- Dumping data for table `tasks`
+--
+
 
 -- --------------------------------------------------------
 

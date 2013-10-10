@@ -282,12 +282,17 @@ class Pos extends CI_Controller {
 
         // get post data
         $data['paymentType'] = $_POST['paymentType'];
-        $data['paid'] = $_POST['provide'];
+        $data['provide'] = $_POST['provide'];
+        $data['discount'] = $_POST['discount'];
 
         // load order
         $order = new Order($orderid);
         $order->status = "paid";
         $order->payment_type = $_POST['paymentType'];
+        // discount calculation
+        $order->discount = $order->total*($_POST['discount']/100);
+        $order->paid = $order->total - $order->discount;
+
         $order->save();
         $data['order'] = $order;
 
