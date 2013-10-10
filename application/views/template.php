@@ -80,6 +80,24 @@ switch ($module) {
 		</div>
 		<!--row -->
 	<!-- MODULE: ITEM -------------------------------------------------------------------->	
+    <?php
+        break;
+    case "tasks":
+		?>
+	<!-- MODULE:  TASKS-------------------------------------------------------------------->	
+		<!--row -->
+		<div class="row-fluid sortable">
+            <!-- TASKS -->
+			<?php $this->load->view("task/task_details"); ?>
+			<!--  TASKS -->
+
+			<!--  TASKS ADD -->
+				<?php $this->load->view("task/task_form"); ?>
+			<!--  TASKS ADD -->
+		</div>
+		<!--row -->
+	<!-- MODULE:  TASKS-------------------------------------------------------------------->	
+    
 <?php	
         break;
 	case "report":

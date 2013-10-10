@@ -98,7 +98,7 @@
 						<li><a class="ajax-link" href="<?php echo base_url();?>pos/index"><i class="icon-shopping-cart"></i><span class="hidden-tablet"> POS</span></a></li>
 						<li><a class="ajax-link" href="<?php echo base_url();?>menuitem/index"><i class="icon-th-list"></i><span class="hidden-tablet"> Item</span></a></li>
 						<li><a class="ajax-link" href="<?php echo base_url();?>pos/index"><i class="icon-list-alt"></i><span class="hidden-tablet"> Inventory</span></a></li>
-						<li><a class="ajax-link" href="<?php echo base_url();?>pos/index"><i class="icon-tasks"></i><span class="hidden-tablet"> Task</span></a></li>
+						<li><a class="ajax-link" href="<?php echo base_url();?>menutask/index"><i class="icon-tasks"></i><span class="hidden-tablet"> Task</span></a></li>
 						<li><a class="ajax-link" href="<?php echo base_url();?>pos/index"><i class="icon-user"></i><span class="hidden-tablet"> User</span></a></li>
 						<li><a class="ajax-link" href="<?php echo base_url();?>pos/index"><i class="icon-print"></i><span class="hidden-tablet"> Report</span></a></li>
 						<li><a class="ajax-link" href="<?php echo base_url();?>pos/index"><i class=" icon-cog"></i><span class="hidden-tablet"> Settings</span></a></li>
