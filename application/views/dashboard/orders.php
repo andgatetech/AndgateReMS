@@ -18,6 +18,8 @@
 								  <th>Order ID</th>
 								  <th>Type</th>
 								  <th>Total</th>
+								  <th>Discount</th>
+								  <th>Paid</th>
 									<th>Table</th>
 								  <th>Status</th>
 								  <th>Action</th>								  
@@ -31,6 +33,8 @@
 								<td><?php echo $order->id;?></td>
 								<td class="center"><?php echo $order->order_type;?></td>
 								<td class="center"><?php echo $order->total;?> BDT</td>
+								<td class="center"><?php echo $order->discount;?> BDT</td>
+								<td class="center"><?php echo $order->paid;?> BDT</td>
 								<td class="center"><?php echo $order->choosen_space;?></td>
 								<td class="center"><?php echo $order->status;?></td>
 								<td class="center">
