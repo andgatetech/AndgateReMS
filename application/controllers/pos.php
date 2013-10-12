@@ -141,8 +141,8 @@ class Pos extends CI_Controller {
         // get vat
         $settings = new Settings();
         $settings->where('name', 'vat')->get();
-        $data['vatparcentage'] = $settings->value;
-        $total = $this->cart->format_number($this->cart->total());
+        //$data['vatparcentage'] = $settings->value;
+        $total = $this->cart->total();
         // Calculate the VAT on the total
         if ($data['vatType'] == "exclusive") {
             $data['vat'] = $total * ($data['vatparcentage'] / 100);
