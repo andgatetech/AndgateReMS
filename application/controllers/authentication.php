@@ -161,8 +161,8 @@ class Authentication extends CI_Controller {
     }
 
     public function need_login($location = NULL) {
-        //$data['error'] = "Need to log in to get access.";
-        $this->load->view("admin/logbox");
+        $data['error'] = "Need to log in to get access.";
+         $this->load->view("login", $data);
 
             
     }

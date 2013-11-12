@@ -41,7 +41,11 @@ if(isset($orderid)){
 									<td><?php echo $items['name'];?></td>
 									<td><?php echo $items['type'];?></td>
 									<td class="center"><?php echo $items['price'];?></td>
-									<td class="center"><?php echo form_input(array('name' => $i.'[qty]', 'value' => $items['qty'], 'class'=>'input-mini')); ?>
+									<td class="center">
+									<input type='button' value='-' class='qtyminus' field='<?php echo $i.'[qty]';?>' />
+    <?php echo form_input(array('name' => $i.'[qty]', 'value' => $items['qty'],'style'=>'width:25px','class'=>'input-mini')); ?>
+    <input type='button' value='+' class='qtyplus' field='<?php echo $i.'[qty]';?>' />
+									
 									
 									</td>
 									<td class="center"><?php echo $this->cart->format_number($items['subtotal']); ?> BDT</td>

@@ -56,6 +56,22 @@ if(isset($msg)){
 								  </select>
 								</div>
 							  </div>
+                              
+                              <div class="control-group">
+								<label class="control-label" for="selectError3">Category</label>
+								<div class="controls">
+								  <select id="selectError3" name="category" class="input-medium focused">
+								  <?php
+									if(isset($categories)){
+										foreach($categories as $category){
+										echo "<option value='".$category->id."'>".$category->name."</option>";
+										}
+									}
+								  ?>
+									
+								  </select>
+								</div>
+							  </div>
 
 							  <div class="form-actions">
 								<button type="submit" class="btn btn-primary">Save Item</button>

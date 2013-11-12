@@ -124,6 +124,13 @@
 						</div>
 						
 						<div class="control-group">
+								<label class="control-label" for="selectError">Discount</label>
+								<div class="controls">
+								<input type="text" name="discount" value="0" id="focusedInput" class="input-small focused"> %
+								</div>
+						</div>
+						
+						<div class="control-group">
 								<input class="btn btn-small btn-success" type="submit" value="Confirm Payment">
 						</div>
 						   

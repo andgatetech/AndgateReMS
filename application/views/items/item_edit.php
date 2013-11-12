@@ -50,11 +50,32 @@ if(isset($msg)){
 									if(isset($item_types)){
 										foreach($item_types as $type){
 										if($type->name === "$singleitem->type"){
-										$seleted = "selected='selected'";
+										$selected = "selected='selected'";
 										}else{
 										$selected = NULL;
 										}
 										echo "<option value='".$type->name."' ".$selected.">".$type->name."</option>";
+										}
+									}
+								  ?>
+									
+								  </select>
+								</div>
+							  </div>
+                              
+                              <div class="control-group">
+								<label class="control-label" for="selectError3">Category</label>
+								<div class="controls">
+								  <select id="selectError3" name="category" class="input-medium focused">
+								  <?php
+									if(isset($categories)){
+										foreach($categories as $category){
+										if($category->id === $singleitem->item_category->id){
+										$selected = "selected=selected";
+										}else{
+										$selected = NULL;
+										}
+										echo "<option value='".$category->id."' ".$selected." >".$category->name."</option>";
 										}
 									}
 								  ?>

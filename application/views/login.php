@@ -5,7 +5,7 @@ include('header.php'); ?>
 			<div class="row-fluid">
 				<div class="span12 center login-header">
 					
-					<img src="<?php echo base_url();?>/assets/img/logo.png">
+					<img src="<?php echo base_url();?>/asset/img/logo.png">
 				</div><!--/span-->
 			</div><!--/row-->
 			
